@@ -1,7 +1,5 @@
 # <!--- Branch -->
 
----
-
 <!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
 - [ ] New feature <!---  non-breaking change which adds functionality -->
 - [ ] Refactor
