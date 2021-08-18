@@ -1,0 +1,39 @@
+.burger-menu {
+  position: relative;
+  width: 2rem;
+  height: .625rem;
+  transition: 2500ms ease-out;
+    .line {
+    width: 2rem;
+    height: 0.125rem;
+    background: $color-gray-3;
+    transition: 500ms;
+      &.one {
+        position: absolute;
+        top: .375rem;
+      }
+      &.two {
+        opacity: 1;
+      }
+      &.three {
+        position: absolute;
+        top: -.375rem;
+      }
+    }
+    .focus {
+      transition: 500ms;
+      &.one {
+        position: absolute;
+        top: 0;
+        transform:rotate(45deg);
+        }
+      &.two {
+        opacity: 0;
+        transform:rotate(360deg);
+      }
+      &.three {
+        top: 0;
+        transform:rotate(135deg);
+      }
+    }
+  }
