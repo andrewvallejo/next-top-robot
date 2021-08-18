@@ -19,6 +19,6 @@ p {
 }
 
 a {
-  @include fonts(paragraph, $font-weight-bold);
+  @include fonts(link, $font-weight-bold);
   color: $color-gray-3;
 }
