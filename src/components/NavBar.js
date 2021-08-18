@@ -16,7 +16,7 @@ export const NavBar = () => {
       </section>
       <section className='right-container'>
         <nav className='nav-container'>
-          <NavLink to='/admin'>admin</NavLink>
+          <NavLink to='/admin'>Admin</NavLink>
           <NavLink to='/'>Log Out</NavLink>
         </nav>
       </section>
