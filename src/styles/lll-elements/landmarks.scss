@@ -1,3 +1,26 @@
 /* ==========================================================================
   Elements - Landmarks
 ========================================================================== */
+
+body {
+  background: $color-gray-0;
+  color: $color-gray-3
+}
+
+header {
+  @include flex(row, space-between);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+article {
+  @include flex(column, center)
+}
+
+form {
+  @include flex(column, center)
+}
+
