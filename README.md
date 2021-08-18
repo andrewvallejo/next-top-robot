@@ -28,7 +28,7 @@ npm install
 npm start
 ```
 
-### Or simply visit the website from this [here](www.website.com).
+### Or simply visit the website from this [here](https://next-top-robot.netlify.app/).
 
 <br>
 
