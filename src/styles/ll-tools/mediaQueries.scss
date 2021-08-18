@@ -15,7 +15,7 @@
     @if $property == grid {
       @include grid(mobile)
     }
-    @if $property == hide {
+    @if $property == visability {
       display: none;
     }
     @if $property == navbar {
@@ -30,6 +30,9 @@
     transition: 100ms;
     @if $property == grid {
       @include grid(tablet)
+    }
+    @if $property == visability {
+      display: initial;
     }
     @if $property == navbar {
           margin: 2.5rem;
