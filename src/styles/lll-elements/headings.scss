@@ -1,0 +1,20 @@
+/* ==========================================================================
+  Elements - Headings
+========================================================================== */
+
+h1 {
+  @include fonts(heading)
+}
+
+h2 {
+  @include fonts(subheading)
+}
+
+h3 {
+  @include fonts(paragraph)
+}
+
+p {
+  @include fonts(paragraph, $font-weight-bold)
+}
+
