@@ -15,14 +15,24 @@
     @if $property == grid {
       @include grid(mobile)
     }
+    @if $property == hide {
+      display: none;
+    }
+    @if $property == navbar {
+      margin: 1.75rem;
+    }
   }
 }
+
 @mixin tablet($property) { 
   @media only screen and (min-width: 768px) {
     @content;
     transition: 100ms;
     @if $property == grid {
       @include grid(tablet)
+    }
+    @if $property == navbar {
+          margin: 2.5rem;
     }
   }
 }
@@ -33,6 +43,9 @@
     transition: 100ms;
     @if $property == grid {
       @include grid(desktop)
+    }
+    @if $property == navbar {
+      margin: 5rem;
     }
   }
 }
