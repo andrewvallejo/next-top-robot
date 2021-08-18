@@ -1,71 +1,82 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+# Next Top Robot 
 
-In the project directory, you can run:
+![image](https://user-images.githubusercontent.com/17935770/129827835-7649f2e6-cd28-4206-b3f7-4788e09ba53f.png)                   
 
-### `yarn start`
+By the end of 2021, there will be **3,788,000** robots. This is nearly a million more units compared to the amount of robots counted in 2019. If you were to purchase a new robot every day, it would take you over **10,000** years to aqcuire robots. Obviously, this isn't feasible for robot-loving fanatics at Mondo Robot. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<details>
+  <summary>
+  Disclaimer  
+  </summary>
+  This is an assessment designed by Mondo Robot as a means to gauge my level of skill. This take home test was completed in 7 days. 
+</details>
 
-### `yarn test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instructions
+Clone the project, install depdencies, and run.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone git@github.com:andrewvallejo/next-top-robot.git
+cd next-top-robot
+npm install 
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Or simply visit the website from this [here](www.website.com).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `yarn eject`
+## Features 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This application caters to both the end user and whomever wants to host the polling for your office's next top robot. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Admin 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+- Admins can log in to access the "Admin" page.
+- Admins can add or remove robots from the poll.
+- Admin can see results from the voting results page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### User 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+- User has the ability to register, log in and log out.
+- User may vote for a robot, but only once.
+- User may change their vote.
+- User may see results from the voting page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## <h2 align="center"> Technologies </h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div align="center">  
+<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
+<img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge"> 
+</div> 
 
-### Making a Progressive Web App
+--- 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
+<br>
+<br>
 
-### Advanced Configuration
+## <h2 align="center"> Author </h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### <h3 align="center"> **Andrew Vallejo** </h3>
 
-### Deployment
+<div align="center">  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Github](https://www.github.com/andrewvallejo) &&
+[Linkedin](https://www.linkedin.com/in/andrewvallejo/)
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# next-top-robot
+</div> 
