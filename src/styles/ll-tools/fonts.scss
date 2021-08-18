@@ -15,5 +15,11 @@
   } @else if $font-type == button {
     font-size: $font-size-button;
     font-weight: $weight;
+  } @else if $font-type == link {
+    font-size: $font-size-link;
+    font-weight: $weight;
+  }  @else if $font-type == bold-link {
+    font-size: $font-size-link;
+    font-weight: $weight;
   }
 }
