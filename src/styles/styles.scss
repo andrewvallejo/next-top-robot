@@ -16,14 +16,22 @@ ll - Tools | Mixins
 @import './ll-tools/mediaQueries.scss';
 
 /* ==========================================================================
-lll - Elements | Semantic Elements & Defaults 
+lll - Elements | Defaults & Semantic Elements 
 ========================================================================== */
 
-@import './lll-elements/buttons.scss';
 @import './lll-elements/defaults.scss';
+@import './lll-elements/buttons.scss';
 @import './lll-elements/headings.scss';
 @import './lll-elements/landmarks.scss';
 
 /* ==========================================================================
 lV - Components 
 ========================================================================== */
+
+@import './lV-components/Button.scss';
+@import './lV-components/Card.scss';
+@import './lV-components/NavBar.scss';
+@import './lV-components/PageAdmin.scss';
+@import './lV-components/PageLogin.scss';
+@import './lV-components/PageResults.scss';
+@import './lV-components/PageRobots.scss';
