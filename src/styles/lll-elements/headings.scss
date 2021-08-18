@@ -18,3 +18,7 @@ p {
   @include fonts(paragraph, $font-weight-bold)
 }
 
+a {
+  @include fonts(paragraph, $font-weight-bold);
+  color: $color-gray-3;
+}
