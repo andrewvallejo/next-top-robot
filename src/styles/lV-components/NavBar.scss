@@ -16,12 +16,17 @@
       }
       .nav-container {
         @include flex(row, space-between);
-        @include mediaQueries(visability);
         width: 10rem;
       }
     }
     &.right-container {
-      @include mediaQueries(visability);
+      @include flex(column, center);
+      position: relative;
+      .burger-menu {
+        position: absolute;
+        top: 50%;
+        right: 10%;
+     }
       .nav-container > a {
         @include fonts(bold-link, $font-weight-regular);
         margin: 0 1.5rem;
