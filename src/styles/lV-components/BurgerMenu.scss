@@ -1,8 +1,8 @@
 .burger-menu {
   position: relative;
+  transition: 250ms ease-out;
   width: 2rem;
   height: .625rem;
-  transition: 2500ms ease-out;
     .line {
     width: 2rem;
     height: 0.125rem;
