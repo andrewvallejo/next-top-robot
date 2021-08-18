@@ -1,0 +1,19 @@
+
+/* ==========================================================================
+  Element - Buttons
+========================================================================== */
+
+button {
+  @include flex(row, center);
+  @include fonts(button);
+  border-radius: 8px;
+  height: 3.3125rem;
+  &:active {
+    background: $color-gray-3;
+    color: $color-white;
+  }
+  &:disabled {
+    background: $color-gray-1;
+    color: $color-gray-3
+  }
+}
