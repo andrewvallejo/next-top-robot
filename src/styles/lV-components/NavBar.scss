@@ -1,0 +1,30 @@
+/* ==========================================================================
+  Component - NavBar
+========================================================================== */
+
+.main-header {
+  @include flex (row, space-between);
+  height: 4rem;
+  background: $color-white;
+  .left-container, .right-container {
+    margin-left: 5rem;
+    @include flex (row, space-between);
+    &.left-container {
+      .logo {
+        margin-right: 3.5rem;
+        width: 5rem;
+      }
+      .nav-container {
+        @include flex(row, space-between);
+        width: 10rem;
+      }
+    }
+    &.right-container {
+      .nav-container > a {
+        @include fonts(bold-link, $font-weight-regular);
+        margin: 0 1.5rem;
+        color: $color-gray-2;
+      }
+    }
+  } 
+}
