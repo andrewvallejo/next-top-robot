@@ -1,8 +1,17 @@
-import React from "react";
+import React from 'react';
+import { Route, Switch } from  'react-router-dom';
 
 export const App = () => {
+  
+
   return (
-    <h1>Next Top Robot</h1>
+    <Switch>
+      <Route exact path="/">
+      </Route>
+      <Route exact path="/robots">
+        <h1>Robots</h1>
+      </Route>
+    </Switch>
   );
 }
 
