@@ -7,8 +7,8 @@
   height: 4rem;
   background: $color-white;
   .left-container, .right-container {
-    margin-left: 5rem;
     @include flex (row, space-between);
+    @include mediaQueries(navbar);
     &.left-container {
       .logo {
         margin-right: 3.5rem;
@@ -16,10 +16,12 @@
       }
       .nav-container {
         @include flex(row, space-between);
+        @include mediaQueries(hide);
         width: 10rem;
       }
     }
     &.right-container {
+      @include mediaQueries(hide);
       .nav-container > a {
         @include fonts(bold-link, $font-weight-regular);
         margin: 0 1.5rem;
