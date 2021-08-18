@@ -3,14 +3,17 @@
 ========================================================================== */
 
 @mixin fonts($font-type, $weight: $font-weight-bold) {
-  @if $font-type==heading {
+  @if $font-type == heading {
     font-size: $font-size-heading; 
     font-weight: $weight;
-  } @else if $font-type==subheading {
+  } @else if $font-type == subheading {
     font-size: $font-size-subheading; 
     font-weight: $weight;
-  } @else if $font-type==paragraph{
+  } @else if $font-type == paragraph{
     font-size: $font-size-paragraph; 
+    font-weight: $weight;
+  } @else if $font-type == button {
+    font-size: $font-size-button;
     font-weight: $weight;
   }
 }
