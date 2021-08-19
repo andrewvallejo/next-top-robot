@@ -3,7 +3,7 @@ import { Button } from './Button'
 import logo from '../assets/mr-logo.png'
 
 export const LoginPortal = () => {
-   const [credentials, setCredentials] = useState({name: '', email: '', password: ''})
+  const [credentials, setCredentials] = useState({name: '', email: '', password: ''})
 
   return (
     <section className='login-board'>
@@ -13,8 +13,8 @@ export const LoginPortal = () => {
         
       </form>
         <div className='buttons-container'>
-          <Button />
-          <Button class=''/>
+          <Button class='login' />
+          <Button class='register' />
         </div>
       </article>
     </section>
