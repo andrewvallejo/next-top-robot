@@ -6,7 +6,13 @@ import { NavBar } from './NavBar';
 import { RobotBoard } from './RobotBoard';
 
 export const App = () => {
+  const [user, setUser] = useState({email: '', password: ''})
   const [error, setError] = useState('')
+
+  const admin = {
+    'email': 'admin@mondorobot.com',
+    'password': 'R0bot4Lif3'
+  }
 
   return (
     <Switch>
