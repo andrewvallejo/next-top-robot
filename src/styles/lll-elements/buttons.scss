@@ -5,13 +5,9 @@
 
 button {
   @include flex(row, center);
-  @include fonts(button);
+  @include fonts(button, $font-weight-regular);
   border-radius: $border-radius;
-  height: 3.3125rem;
-  &:active {
-    background: $color-gray-3;
-    color: $color-white;
-  }
+
   &:disabled {
     background: $color-gray-1;
     color: $color-gray-3
