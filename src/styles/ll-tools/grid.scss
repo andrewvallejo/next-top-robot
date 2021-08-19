@@ -7,10 +7,10 @@
   justify-items: center;
   @if $viewport==mobile {
     grid-template-columns: repeat(1 , 1fr);
-    gap: 1.5rem 1.5rem;
+    gap: 1.5rem 0;
   } @else if $viewport==tablet {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1.5rem;
+    gap: 1.5rem 1rem;
   } @else if $viewport==desktop{
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem 1.5rem;
