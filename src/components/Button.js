@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
 
-export const Button = () => {
+export const Button = ({ value, palette }) => {
   const [active, setActive] = useState(false)
+  const [theme, setTheme] = useState('primary')
+
+
+
 
   return (
-    <button class={`primary-button ${active ? 'active' : ' '}`}   onClick={() => setActive(!active)}>
-        {active ? 'Vote Cast' : 'Vote'}
+    <button 
+      className={`button 
+        ${palette === theme ? theme : setTheme('secondary')}
+        ${active ? 'active' : ' '} `}
+        onClick={() => setActive(!active)} >
+        {value}
+        {/* {active ? 'Vote Cast' : 'Vote'} */}
     </button>
   )
 }
