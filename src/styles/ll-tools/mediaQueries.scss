@@ -13,6 +13,12 @@
   @media only screen and (min-width: 320px)  {
     @content;
     transition: 100ms;
+    @if $property == overflow {
+      overflow: hidden;
+    }
+    @if $property == padding {
+      padding: 0 .75rem;
+    }
     @if $property == grid {
       @include grid(mobile)
     }
@@ -30,6 +36,10 @@
       transition: 200ms;
       opacity: 0;
       transform: scale(.5);
+    }
+    @if $property == card-size {
+      height: 32rem;
+      width: 22rem;
     }
   }
 }
@@ -51,9 +61,16 @@
 }
 
 @mixin tablet($property) { 
-  @media only screen and (min-width: 601px) {
+  @media only screen and (min-width: 768px) {
     @content;
     transition: 100ms;
+    @if $property == overflow {
+      overflow: hidden;
+    }
+
+    @if $property == padding {
+      padding: 0 2.5rem;
+    }
     @if $property == grid {
       @include grid(tablet)
     }
@@ -71,6 +88,10 @@
       transform: scale(1);
       opacity: 1;
     }
+    @if $property == card-size {
+      height: 32rem;
+      width: 22rem;
+    }
   }
 }
 
@@ -78,6 +99,12 @@
   @media only screen and (min-width: 1024px) {
     @content;
     transition: 100ms;
+    @if $property == overflow {
+      overflow: hidden;
+    }
+    @if $property == padding {
+      padding: 0 6.25rem;
+    }
     @if $property == grid {
       @include grid(desktop)
     }
@@ -93,6 +120,10 @@
     @if $property == nav-visability {
       transition: 200ms;
       opacity: 1;
+    }
+    @if $property == card-size {
+      height: 32rem;
+      width: 24rem;
     }
   }
 }
