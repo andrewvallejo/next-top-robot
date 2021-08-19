@@ -21,6 +21,7 @@ export const LoginPortal = ({login, error}) => {
             <fieldset className='input-label'>
               <legend className='input-name'>Full name</legend>
               <input 
+              className='inner-input' 
               type='text' 
               name='name' 
               id='name' 
@@ -33,7 +34,9 @@ export const LoginPortal = ({login, error}) => {
           <label htmlFor='email'>
             <fieldset className='input-label'>
               <legend className='input-name'>Email</legend>
-              <input type='text' email='email' id='email' 
+              <input
+              className='inner-input' 
+              type='text' email='email' id='email' 
               value={credentials.email}
               onChange={e => setCredentials({...credentials, email: e.target.value })} 
               />
@@ -45,6 +48,7 @@ export const LoginPortal = ({login, error}) => {
             <fieldset className='input-label'>
               <legend className='input-name'>Password</legend>
               <input type='password' password='password' id='password'
+              className='inner-input' 
               autoComplete='on'
               value={credentials.password}
               onChange={e => setCredentials({...credentials, password: e.target.value })} /> 
