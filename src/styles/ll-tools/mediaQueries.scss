@@ -4,6 +4,7 @@
 
 @mixin mediaQueries($property) {
   @include mobile($property);
+  @include small-screen($property);
   @include tablet($property);
   @include desktop($property);
 }
@@ -20,7 +21,10 @@
       margin: 1.75rem;
     }
     @if $property == burger-visability {
-      @include small-screen(burger-visability)
+      right: 10%;
+      transition: 500ms;
+      transform: scale(1);
+      opacity: 1;
     }
     @if $property == nav-visability{
       transition: 200ms;
@@ -31,9 +35,9 @@
 }
 
 @mixin small-screen($property) {
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     @if $property == burger-visability {
-      right: 50%;
+      right: 10%;
       transition: 500ms;
       transform: scale(1);
       opacity: 1;
@@ -47,7 +51,7 @@
 }
 
 @mixin tablet($property) { 
-  @media only screen and (min-width: 501px) {
+  @media only screen and (min-width: 601px) {
     @content;
     transition: 100ms;
     @if $property == grid {
