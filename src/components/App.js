@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route, Switch } from  'react-router-dom';
+import { BoardHeader } from './BoardHeader';
+import { NavBar } from './NavBar';
+import { RobotBoard } from './RobotBoard';
 
 export const App = () => {
   
@@ -9,7 +12,13 @@ export const App = () => {
       <Route exact path="/">
       </Route>
       <Route exact path="/robots">
-        <h1>Robots</h1>
+        <NavBar /> 
+        <BoardHeader />
+        <main>
+          <Route exact path="/robots">
+            <RobotBoard />
+          </Route>
+        </main>
       </Route>
     </Switch>
   );
