@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from './Button'
 import logo from '../assets/mr-logo.png'
 
 export const LoginPortal = () => {
+   const [credentials, setCredentials] = useState({name: '', email: '', password: ''})
 
   return (
     <section className='login-board'>
