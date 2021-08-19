@@ -1,0 +1,17 @@
+.login-board {
+  @include flex(column, center);
+  width: 100vw;
+  height: 100vh;
+  padding: 5rem 0;
+  .portal {
+    @include flex(column, space-around);
+
+    width: 30rem;
+    height: 52.25rem;
+    background: $color-white;
+    > .buttons-container {
+      height: 8rem;
+      @include flex(column, space-around);
+    }
+  }
+}
