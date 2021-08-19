@@ -15,23 +15,30 @@
     .form-inputs {
       @include flex(column, space-around);
       height: 6.5rem;
-     .input-name {
-       margin-left: 1.5rem;
-       padding: 0 .2rem;
-     }
+      .input-name {
+        margin-left: 1.5rem;
+        padding: 0 .2rem;
+      }
      .input-label {
-       @include mediaQueries(input-width);
+        @include flex(column, center, flex-start);
+        @include mediaQueries(input-width);
         border: 1px solid $color-gray-1;
         border-radius: $border-radius;
         height: 4rem;
         color: $color-gray-2;
+        > .inner-input {
+          @include fonts(paragraph, $font-weight-regular);
+          width: 100%;
+          padding: 0 1rem .3rem 1rem;
+          color: $color-gray-3;
+        }
       }
     }
     .buttons-container {
       @include flex(column, space-around);
       height: 9rem;
       > .button {
-        @include mediaQueries(input-width);
+          @include mediaQueries(input-width);
       }
     }
   }
