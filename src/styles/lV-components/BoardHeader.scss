@@ -1,0 +1,8 @@
+.board-header {
+  @include flex (column, center);
+  height: 12rem;
+  > .title {
+    margin-left: 6.25rem;
+    align-self:flex-start;
+  }
+}
