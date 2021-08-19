@@ -7,7 +7,6 @@ button {
   @include flex(row, center);
   @include fonts(button, $font-weight-regular);
   border-radius: $border-radius;
-
   &:disabled {
     background: $color-gray-1;
     color: $color-gray-3
