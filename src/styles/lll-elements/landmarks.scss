@@ -30,3 +30,7 @@ form {
   @include flex(column, center)
 }
 
+section {
+  width: 100%;
+  height: 100%;
+}
