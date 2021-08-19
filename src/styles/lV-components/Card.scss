@@ -1,0 +1,9 @@
+.card {
+  @include flex(column, space-around);
+  @include mediaQueries(card-size);
+  padding: 2.5rem 1.5rem 1.5rem;
+  > .robot-image {
+    height: 20rem;
+    width: 22rem;
+  }
+}
