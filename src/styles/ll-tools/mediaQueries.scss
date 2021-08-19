@@ -14,7 +14,7 @@
     @content;
     transition: 100ms;
     @if $property == overflow {
-      overflow: auto;
+      overflow-x: hidden;
     }
     @if $property == padding {
       padding: 0 .75rem;
@@ -64,10 +64,6 @@
   @media only screen and (min-width: 768px) {
     @content;
     transition: 100ms;
-    @if $property == overflow {
-      overflow: hidden;
-    }
-
     @if $property == padding {
       padding: 0 1.5rem;
     }
@@ -96,12 +92,9 @@
 }
 
 @mixin desktop($property) {
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 1025px) {
     @content;
     transition: 100ms;
-    @if $property == overflow {
-      overflow: hidden;
-    }
     @if $property == padding {
       padding: 0 6.25rem;
     }
