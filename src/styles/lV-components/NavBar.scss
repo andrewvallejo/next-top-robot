@@ -4,6 +4,7 @@
 
 .main-header {
   @include flex (row, space-between);
+  position: relative;
   height: 4rem;
   width: 100%;
   background: $color-white;
@@ -24,14 +25,12 @@
     }
     &.right-container {
       @include flex(column, center);
-      position: relative;
       .burger-menu {
         @include mediaQueries(burger-visability);
         transition: 500ms;
-
         position: absolute;
         top: 50%;
-        right: 60%;
+        right: 50%;
       }
       .nav-container {
         > a {
