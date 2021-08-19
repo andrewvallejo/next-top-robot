@@ -3,13 +3,14 @@
   width: 100vw;
   height: 100vh;
   .portal {
-    padding: 4rem 0;
-    height: 36;
+    @include mediaQueries(portal);
+    @include mediaQueries(overflow);
+    @include flex(column, space-around);
+    background: $color-white;
+    padding: 3.75rem 4rem;
     .logo {
       margin-bottom: 2rem;
     }
-    @include flex(column, space-around);
-    width: 38rem;
     background: $color-white;
     .form-inputs {
       @include flex(column, space-around);
@@ -19,9 +20,9 @@
        padding: 0 .2rem;
      }
      .input-label {
+       @include mediaQueries(input-width);
         border: 1px solid $color-gray-1;
         border-radius: $border-radius;
-        width: 31rem;
         height: 4rem;
         color: $color-gray-2;
       }
@@ -30,7 +31,7 @@
       @include flex(column, space-around);
       height: 9rem;
       > .button {
-          width: 31rem;
+        @include mediaQueries(input-width);
       }
     }
   }
