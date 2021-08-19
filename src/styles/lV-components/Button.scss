@@ -1,0 +1,15 @@
+.primary-button {
+
+  background: $color-gray-3;
+  padding:  1rem 3rem;
+  color: $color-white;
+  transition: 200ms;
+  &:hover {
+    transition: 200ms;
+    background: $color-gray-2;
+  }
+  &.active {
+    background: $color-gray-1;
+    color: $color-white;
+  }
+}
