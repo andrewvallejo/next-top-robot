@@ -1,15 +1,29 @@
-.primary-button {
-
-  background: $color-gray-3;
-  padding:  1rem 3rem;
-  color: $color-white;
+.button{
   transition: 200ms;
-  &:hover {
-    transition: 200ms;
-    background: $color-gray-2;
-  }
-  &.active {
-    background: $color-gray-1;
+  &.primary {
+    padding:  1rem 3rem;
+    background: $color-gray-3;
     color: $color-white;
-  }
+    &:hover {
+      transition: 200ms;
+      background: $color-gray-2;
+    }
+    &:active {
+      background: $color-gray-3;
+      color: $color-white;
+    }
+  } 
+  &.secondary {
+    border: 2px solid $color-gray-3;
+    padding:  1rem 3rem;
+    color: $color-gray-3;
+    &:hover {
+      transition: 200ms;
+      background: $color-gray-0;
+    }
+    &:active {
+      background: $color-gray-3;
+      color: $color-white;
+    }
+  } 
 }
