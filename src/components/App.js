@@ -10,14 +10,26 @@ export const App = () => {
   const [error, setError] = useState('')
 
   const admin = {
-    'email': 'admin@mondorobot.com',
-    'password': 'R0bot4Lif3'
+    email: 'admin@mondorobot.com',
+    password: 'R0bot4Lif3'
+  }
+
+  const login = (current) => {
+    if (admin.email === current.email && admin.password === current.password) {
+      setError('')
+      setUser({
+        name: current.name,
+        email: current.email
+      })
+    } else {
+      setError('Incorrect Credentials')
+    } 
   }
 
   return (
     <Switch>
       <Route exact path='/'>
-          <LoginPortal />
+          <LoginPortal login={login} error={error}/>
       </Route>
       <Route exact path='/robots'>
         <NavBar /> 
