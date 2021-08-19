@@ -3,7 +3,7 @@
   Element - Buttons
 ========================================================================== */
 
-button {
+Button {
   @include flex(row, center);
   @include fonts(button, $font-weight-regular);
   border-radius: $border-radius;
