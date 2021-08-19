@@ -8,19 +8,17 @@ export const App = () => {
   
 
   return (
-    <Switch>
-      <Route exact path="/">
-      </Route>
-      <Route exact path="/robots">
-        <NavBar /> 
-        <BoardHeader />
-        <main>
-          <Route exact path="/robots">
+    // <Switch>
+    <Route exact path="/robots">
+    <NavBar /> 
+        <main>       
+         <BoardHeader />
+
             <RobotBoard />
-          </Route>
         </main>
+
       </Route>
-    </Switch>
+    // </Switch>
   );
 }
 
