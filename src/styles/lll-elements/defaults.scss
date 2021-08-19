@@ -44,11 +44,6 @@ button, input {
   cursor: pointer;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  transition: background-color 600000s 0s, color 600000s 0s;
-}
-
 :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: inherit;
 	font-style: inherit;
