@@ -8,7 +8,7 @@ export const Card = () => {
     <article className='card'>
       <h3>Bender</h3>
       <img className='robot-image' alt='Bender' src={bender} />
-      <Button />
+      <Button value='Vote' palette='primary'/>
     </article>
   )
 }
