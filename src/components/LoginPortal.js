@@ -3,6 +3,7 @@ import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Button } from './Button'
 import logo from '../assets/mr-logo.png'
 import { authenticateUser } from '../utility/apiCalls/apiCalls';
+import { Loading } from './Loading';
 
 
 export const LoginPortal = () => {
@@ -31,6 +32,7 @@ export const LoginPortal = () => {
 
   return (
     <section className='login-board'>
+    {(credentials.authenticated) && (<Loading />)}
       <article className='portal'>
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <form className='login-form' onSubmit={handleSubmit}>
