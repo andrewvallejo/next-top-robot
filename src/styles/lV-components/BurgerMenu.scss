@@ -4,10 +4,10 @@
   width: 2rem;
   height: .625rem;
     .line {
+    transition: 500ms;
     width: 2rem;
     height: 0.125rem;
     background: $color-gray-3;
-    transition: 500ms;
       &.one {
         position: absolute;
         top: .375rem;
