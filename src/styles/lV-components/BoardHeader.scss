@@ -2,6 +2,7 @@
   @include flex (column, center);
   height: 12rem;
   > .title {
+    padding: clamp(5rem, 6.5%, 12rem);
     align-self:flex-start;
   }
 }
