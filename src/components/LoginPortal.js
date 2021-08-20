@@ -45,7 +45,7 @@ export const LoginPortal = () => {
               name='name' 
               id='name' 
               value={credentials.name || ''}
-              onChange={e => inputHandler(e)} />
+              onChange={e => handleInput(e)} />
             </fieldset>
           </label>
         </div>
@@ -57,7 +57,7 @@ export const LoginPortal = () => {
               className='inner-input' 
               type='text' name='email' id='email' 
               value={credentials.email || ''}
-              onChange={e => inputHandler(e)} 
+              onChange={e => handleInput(e)} 
               />
             </fieldset>
           </label>
@@ -70,7 +70,7 @@ export const LoginPortal = () => {
               className='inner-input' 
               autoComplete='on'
               value={credentials.password || ''}
-              onChange={e => inputHandler(e)} /> 
+              onChange={e => handleInput(e)} /> 
             </fieldset>
           </label>
         </div>
