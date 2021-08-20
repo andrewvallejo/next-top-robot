@@ -59,7 +59,6 @@ export const LoginPortal = ({login, error}) => {
           <Button type='submit' value='Log In' palette='primary' />
           <Button value='Register' palette='secondary' />
         </div>
-
       </form>
       </article>
     </section>
