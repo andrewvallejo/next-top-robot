@@ -8,6 +8,7 @@ export const RobotBoard = () => {
        <Card />
        <Card />
        <Card />
+       <Card />
     </section>
   )
 }
