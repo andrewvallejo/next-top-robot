@@ -36,9 +36,9 @@
         > a {
           @include mediaQueries(nav-visability);
           @include fonts(bold-link, $font-weight-regular);;
-        margin: 0 1.5rem;
-        white-space: nowrap;
-        color: $color-gray-2;
+          margin: 0 1.5rem;
+          white-space: nowrap;
+          color: $color-gray-2;
       }}
     }
   } 
