@@ -11,6 +11,7 @@ export const LoginPortal = () => {
     name: '',
     email: '',
     password: '',
+    authenticated: false,
     error: ''
   }
 
@@ -23,10 +24,9 @@ export const LoginPortal = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-     setCredentials({...credentials, error: ''})
+     setCredentials({...credentials, authenticated: true, error: ''})
     await authenticateUser(credentials.email, credentials.password)
-    .then(({token}) => dispatch({type: 'LOGIN', info:{data: token, user: credentials.name}}))
-      
+    .then(({ token }) => dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }}))
   }
 
   return (
