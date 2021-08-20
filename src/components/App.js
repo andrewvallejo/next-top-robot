@@ -28,15 +28,12 @@ export const App = () => {
 
   return (
     <Switch>
-     
-          {!user.email && !user.password && 
-            <Route exact path='/'>
-            <LoginPortal login={login} error={error}/>
-            </Route>
-            }
-
-        <NavBar /> 
+      {!user.email && !user.password && 
+        <Route exact path='/'>
+          <LoginPortal login={login} error={error}/>
+        </Route>}
       <Route exact path={['/', '/robots']}>
+        <NavBar /> 
         <main>       
           <BoardHeader />
           <RobotBoard />
