@@ -1,17 +1,16 @@
 .login-board {
   @include flex(column, center);
-  width: 100vw;
-  height: 100vh;
+  @include mediaQueries(padding);
+  padding: 1rem;
+  overflow: auto;
   .portal {
     @include mediaQueries(portal);
-    @include mediaQueries(overflow);
     @include flex(column, space-around);
     background: $color-white;
     padding: 3.75rem 4rem;
     .logo {
       margin-bottom: 2rem;
     }
-    background: $color-white;
     .form-inputs {
       @include flex(column, space-around);
       height: 6.5rem;
