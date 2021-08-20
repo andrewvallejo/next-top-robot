@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from  'react-router-dom';
-import { BoardHeader } from './BoardHeader';
+import { Home } from './Home';
 import { LoginPortal } from './LoginPortal';
-import { NavBar } from './NavBar';
-import { RobotBoard } from './RobotBoard';
 
 export const App = () => {
   const [user, setUser] = useState({email: '', password: ''})
@@ -33,11 +31,7 @@ export const App = () => {
           <LoginPortal login={login} error={error}/>
         </Route>}
       <Route exact path={['/', '/robots']}>
-        <NavBar /> 
-        <main>       
-          <BoardHeader />
-          <RobotBoard />
-        </main>
+        <Home />
       </Route>
     </Switch>
   );
