@@ -15,7 +15,8 @@ export const Button = ({ value, palette }) => {
           ${active ? 'active' : ' '} `}
           onClick={() => setActive(!active)} >
           {active ? 'Vote Cast' : 'Vote'}
-         </button>)
+        </button>
+      )
     case 'Register':
       return (
         <NavLink
