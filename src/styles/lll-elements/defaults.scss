@@ -13,11 +13,6 @@ html {
   overflow:   scroll;
 }
 
-::-webkit-scrollbar {
-    width: 0;
-    background: transparent; 
-}
-
 body {  
   font-family: "Helvetica", Sans-Serif; 
   line-height: 1;
@@ -54,4 +49,9 @@ button, input {
 
 input:-webkit-autofill {
   box-shadow: 0 0 0 30px $color-white inset !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent; 
 }
