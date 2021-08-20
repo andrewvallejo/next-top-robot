@@ -38,8 +38,8 @@
       @include flex(column, space-around);
       height: 9rem;
       > .button {
-          @extend Button;
-          @include mediaQueries(input-width);
+        @extend Button;
+        @include mediaQueries(input-width);
       }
     }
   }
