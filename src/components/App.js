@@ -7,9 +7,9 @@ import { reducer } from '../utility/apiCalls/reducer';
 
 const initalState = {
   isAuthenticated: false,
-  user: null,
-  token: null,
-  error: null,
+  user: '',
+  token: '',
+  error: '',
 }
 
 export const App = () => {
