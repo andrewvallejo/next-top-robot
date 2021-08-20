@@ -11,7 +11,7 @@ export const App = () => {
 
   const admin = {
     email: 'admin@mondorobot.com',
-    password: 'R0bot4Lif3'
+    password: '123'
   }
 
   const login = (current) => {
@@ -28,11 +28,15 @@ export const App = () => {
 
   return (
     <Switch>
-      <Route exact path='/'>
-          <LoginPortal login={login} error={error}/>
-      </Route>
-      <Route exact path='/robots'>
+     
+          {!user.email && !user.password && 
+            <Route exact path='/'>
+            <LoginPortal login={login} error={error}/>
+            </Route>
+            }
+
         <NavBar /> 
+      <Route exact path={['/', '/robots']}>
         <main>       
           <BoardHeader />
           <RobotBoard />
