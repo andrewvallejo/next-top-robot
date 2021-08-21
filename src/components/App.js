@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { Route, Switch } from  'react-router-dom';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Home } from './Home';
@@ -14,6 +14,10 @@ const initalState = {
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initalState)
 
+  useEffect(() => {
+    dispatch({type: 'AUTOLOGIN', info: ''})
+  }, [])
+  
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
       <Switch>
