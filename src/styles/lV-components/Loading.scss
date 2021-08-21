@@ -1,12 +1,12 @@
-.load-container {
+.load {
   @include flex(row, center);
   z-index: 0;
   box-shadow: $box-shadow;
   height: 100vh;
   width: 100vw;
   .website-title {
+    @include mediaQueries(web-title-position);
     position: absolute;
-    top: 40%;
     opacity: 0;
     animation: fade-in 1s linear 3.1s normal forwards;
     font-size: 2.2rem;
@@ -15,9 +15,9 @@
     position: absolute;
   }
   .backdrop {
+    @include mediaQueries(web-title-position);
     position: absolute;
     z-index: -1;
-    top: 38%;
     opacity: 0;
     animation: fade-in 5s linear 3s normal forwards;
     box-shadow: $box-shadow-1;
@@ -27,10 +27,18 @@
   }
   .box {
     z-index: 3;
-    animation: grow 2s linear 750ms normal forwards,
-               shrink 1s linear 5s normal forwards;
+    animation: shrink 1s linear 5s normal forwards;
     width: 15rem;
     height: 20rem;
     background: $color-gray-0;
+    &.one {
+      animation: grow-left 2s linear 500ms normal forwards,
+      shrink-left 1s linear 4.5s normal forwards;
+    } 
+    &.two {
+      animation: grow-right 2s linear 500ms normal forwards,
+      shrink-right 1s linear 4.5s normal forwards;
+    } 
+      
     }
   } 
