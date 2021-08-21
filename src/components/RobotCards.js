@@ -5,6 +5,7 @@ import { Card } from './Card'
 
 export const RobotCards = () => {
   const { state: { token } } = useContext(AuthContext)
+  const [uploaded, setUploaded] = useState(false)
   const [robots, setRobots] = useState([])  
 
   useEffect(() => {
@@ -14,9 +15,13 @@ export const RobotCards = () => {
     })()
   }, [token])
 
+  const handleVote = (id) => {
+    setUploaded(true)
+  }
+
   return robots.map((robot) => {
     return (
-          <Card robotInfo = {robot} />
+          <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} />
     )
   })
 }
