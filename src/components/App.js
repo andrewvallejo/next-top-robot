@@ -7,7 +7,6 @@ import { reducer } from '../utility/apiCalls/reducer';
 
 const initalState = {
   isAuthenticated: false,
-  user: '',
   token: '',
   error: '',
 }
