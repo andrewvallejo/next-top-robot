@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
+import logo from '../assets/mr-logo.png'
+import { authenticateUser  } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Button } from './Button'
-import logo from '../assets/mr-logo.png'
-import { authenticateUser } from '../utility/apiCalls/apiCalls';
 import { Loading } from './Loading';
 
 
@@ -29,11 +29,12 @@ export const LoginPortal = () => {
     .then(({ token }) => {
       setCredentials({...credentials, authenticated: true, error: ''})
       setTimeout(() => {
-      dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }})
-  }, 6000)})
+        dispatch({type: 'LOGIN', info:{ data: token}})
+      }, 6000)})
     .catch(() => {
       event.preventDefault()
-      setCredentials({...credentials, authenticated: false, error: 'Fill out the correct email and password'})}) 
+      setCredentials({...credentials, authenticated: false, error: 'Fill out the correct email and password'})
+    }) 
   }
 
   return (
