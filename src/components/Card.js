@@ -15,6 +15,7 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted}) => {
         <Button 
           palette='primary'
           activate={() => handleButton(id)}
+          value='Vote'
           isActive={active}
           isVoted={hasVoted} /> 
       </article>
