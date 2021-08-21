@@ -7,6 +7,7 @@ export const RobotCards = () => {
   const { state: { token } } = useContext(AuthContext)
   const [uploaded, setUploaded] = useState(false)
   const [robots, setRobots] = useState([])  
+  const [robotId, setRobotId] = useState('')
 
   useEffect(() => {
     (async () => {
@@ -16,7 +17,13 @@ export const RobotCards = () => {
   }, [token])
 
   const handleVote = (id) => {
-    setUploaded(true)
+    if (robotId !== id && !robotId) {
+      setUploaded(true)
+      setRobotId(id)
+    } else if (robotId === id ) {
+      setUploaded(false)
+      setRobotId('')
+    }
   }
 
   return robots.map((robot) => {
