@@ -9,8 +9,6 @@ Button {
   border-radius: $border-radius;
   cursor: pointer;
   &:disabled {
-    background: $color-gray-1;
-    color: $color-gray-3;
     cursor:grab;
   }
 }
