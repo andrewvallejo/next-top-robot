@@ -17,12 +17,13 @@ export const reducer = (state, action) => {
       };
       case "AUTOLOGIN": 
         const token = JSON.parse(localStorage.getItem('token'))
-        return {
+        return token ?
+         {
           ...state,
           token: token,
           isAuthenticated: true
-        }
-    default:
+        } : state
+      default:
       return state;
   }
 };
