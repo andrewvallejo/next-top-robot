@@ -1,7 +1,7 @@
 import React from 'react'
 import { BoardHeader } from './BoardHeader'
 import { NavBar } from './NavBar'
-import { RobotBoard } from './RobotBoard'
+import { RobotCards } from './RobotCards'
 
 export const Home = () => {
   return (
@@ -9,7 +9,9 @@ export const Home = () => {
       <NavBar /> 
       <main>       
         <BoardHeader />
-        <RobotBoard />
+        <section className='robot-board'>
+          <RobotCards />
+        </section>
       </main>
     </>
   )
