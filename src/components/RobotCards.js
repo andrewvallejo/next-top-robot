@@ -3,7 +3,7 @@ import { retrieveRobots } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Card } from './Card'
 
-export const RobotBoard = () => {
+export const RobotCards = () => {
   const { state: { token } } = useContext(AuthContext)
   const [robots, setRobots] = useState([])  
 
@@ -14,9 +14,9 @@ export const RobotBoard = () => {
     })()
   }, [token])
 
-  return (
-    <section className='robot-board'>
-        <Card robots={robots} />
-    </section>
-  )
+  return robots.map((robot) => {
+    return (
+          <Card robotInfo = {robot} />
+    )
+  })
 }
