@@ -25,10 +25,15 @@ export const LoginPortal = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-     setCredentials({...credentials, authenticated: true, error: ''})
     await authenticateUser(credentials.email, credentials.password)
-    .then(({ token }) => setTimeout(() => {dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }})
-  }, 6000))
+    .then(({ token }) => {
+      setCredentials({...credentials, authenticated: true, error: ''})
+      setTimeout(() => {
+      dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }})
+  }, 6000)})
+    .catch(() => {
+      event.preventDefault()
+      setCredentials({...credentials, authenticated: false, error: 'Fill out the correct email and password'})}) 
   }
 
   return (
@@ -48,7 +53,7 @@ export const LoginPortal = () => {
               name='name' 
               id='name' 
               value={credentials.name || ''}
-              onChange={e => handleInput(e)} />
+              onChange={(e) => handleInput(e)} />
             </fieldset>
           </label>
         </div>
@@ -60,7 +65,7 @@ export const LoginPortal = () => {
               className='inner-input' 
               type='text' name='email' id='email' 
               value={credentials.email || ''}
-              onChange={e => handleInput(e)} 
+              onChange={(e) => handleInput(e)} 
               />
             </fieldset>
           </label>
@@ -73,12 +78,12 @@ export const LoginPortal = () => {
               className='inner-input' 
               autoComplete='on'
               value={credentials.password || ''}
-              onChange={e => handleInput(e)} /> 
+              onChange={(e) => handleInput(e)} /> 
             </fieldset>
           </label>
         </div>
         <div className='buttons-container'>
-          <Button type='submit' value='Log In' palette='primary' />
+          <Button disable={!credentials.authenticated} type='submit' value='Log In' palette='primary' />
           <Button value='Register' palette='secondary' />
         </div>
       </form>
