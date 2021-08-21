@@ -1,9 +1,23 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { BurgerMenu } from './BurgerMenu';
+import React, { useContext } from 'react';
 import logo from  '../assets/mr-logo.png';
+import { AuthContext } from '../utility/apiCalls/AuthContext';
+import { BurgerMenu } from './BurgerMenu';
+import { expireSession } from '../utility/apiCalls/apiCalls';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
+  const { dispatch, state: authState } = useContext(AuthContext);
+  const { isAuthenticated, token } = authState
+
+  const handleLogOut = async(event) => {
+    event.preventDefault();
+    await expireSession(token)
+    .then(() => !isAuthenticated)
+    .then(() => {dispatch({type: 'LOGOUT', info: {}}) 
+  })
+    .catch((error) => console.error(error))
+  }
+
   return (
     <header className='main-header'>
       <section className='left-container'>
@@ -18,10 +32,10 @@ export const NavBar = () => {
       <section className='right-container'>
         <nav className='nav-container'>
           <NavLink to='/admin'>Admin</NavLink>
-          <NavLink to='/'>Log Out</NavLink>
+          <NavLink to=  '/' onClick={handleLogOut}>Log Out</NavLink>
           <BurgerMenu />
         </nav>
       </section>
     </header>
-  );
+  )
 }
