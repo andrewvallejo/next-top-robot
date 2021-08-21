@@ -1,12 +1,12 @@
 export const reducer = (state, action) => {
-  const {type, info: { data }} = action
+  const {type, info } = action
   switch (type) {
     case "LOGIN":
-      localStorage.setItem("token", JSON.stringify(data));
+      localStorage.setItem("token", JSON.stringify(info));
       return {
         ...state,
         isAuthenticated: true,
-        token: data
+        token: info
       };
     case "LOGOUT":
       localStorage.clear();
@@ -15,6 +15,13 @@ export const reducer = (state, action) => {
         isAuthenticated: false,
         token: ''
       };
+      case "AUTOLOGIN": 
+        const token = JSON.parse(localStorage.getItem('token'))
+        return {
+          ...state,
+          token: token,
+          isAuthenticated: true
+        }
     default:
       return state;
   }
