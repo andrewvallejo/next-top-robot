@@ -1,8 +1,7 @@
 
 import axios from "axios";
 
-const robot = 'x-robot-art-api-key';
-const key  = '20aa48d3a65c7373416c6938f9d606a8';
+const key  = '20aa48d3a65c7373416c6938f9d606a8'
 
 const generateApiUrl = (request) => {
   const url = "https://mondo-robot-art-api.herokuapp.com"
@@ -26,9 +25,9 @@ export const authenticateUser = async(email, password) => {
   const config = {
     method: 'post',
     url: generateApiUrl('session'),
-    headers: `${robot}: ${key}`,
+    headers: {'x-robot-art-api-key': key},
     data: data
-  } ; 
+  }  
   return sendRequest(config)
 }
 
@@ -37,7 +36,7 @@ export const expireSession = async(token) => {
     method: 'delete',
     url: generateApiUrl('session'),
     headers: {'Authorization': `Bearer ${token}`}
-  };
+  }
   return sendRequest(config)
 }
 
