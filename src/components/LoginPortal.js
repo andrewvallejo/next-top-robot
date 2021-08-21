@@ -7,7 +7,6 @@ import { Loading } from './Loading';
 
 
 export const LoginPortal = () => {
-  const { dispatch } = useContext(AuthContext)
   const initialState = {
     name: '',
     email: '',
@@ -15,7 +14,8 @@ export const LoginPortal = () => {
     authenticated: false,
     error: ''
   }
-
+  
+  const { dispatch } = useContext(AuthContext)
   const [credentials, setCredentials] = useState({ initialState })
 
   const handleInput = (event) => {
@@ -29,7 +29,7 @@ export const LoginPortal = () => {
     .then(({ token }) => {
       setCredentials({...credentials, authenticated: true, error: ''})
       setTimeout(() => {
-        dispatch({type: 'LOGIN', info:{ data: token}})
+        dispatch({type: 'LOGIN', info: token})
       }, 6000)})
     .catch(() => {
       event.preventDefault()
@@ -45,7 +45,7 @@ export const LoginPortal = () => {
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <form className='login-form' onSubmit={handleSubmit}>
         {(!!credentials.error) && (<div className='error'>{credentials.error}</div>)}
-        <div className='form-inputs'>
+        {/* <div className='form-inputs'>
           <label htmlFor='name'>
             <fieldset className='input-label'>
               <legend className='input-name'>Full name</legend>
@@ -58,7 +58,7 @@ export const LoginPortal = () => {
               onChange={(e) => handleInput(e)} />
             </fieldset>
           </label>
-        </div>
+        </div> */}
         <div className='form-inputs'>
           <label htmlFor='email'>
             <fieldset className='input-label'>
