@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { retrieveRobots } from '../utility/apiCalls/apiCalls';
+import { retrieveRobots, undoVote, voteForRobot } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Card } from './Card'
 
@@ -16,13 +16,15 @@ export const RobotCards = () => {
     })()
   }, [token])
 
-  const handleVote = (id) => {
+  const handleVote = async (id) => {
     if (robotId !== id && !robotId) {
       setUploaded(true)
       setRobotId(id)
+      await voteForRobot(id, token)
     } else if (robotId === id ) {
       setUploaded(false)
       setRobotId('')
+      await undoVote(id, token)
     }
   }
 
