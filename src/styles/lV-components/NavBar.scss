@@ -5,6 +5,7 @@
 .main-header {
   @include flex (row, space-between);
   position: relative;
+  overflow: hidden;
   height: 4rem;
   width: 100%;
   background: $color-white;
