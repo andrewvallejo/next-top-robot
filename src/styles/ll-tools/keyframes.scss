@@ -1,0 +1,28 @@
+@keyframes grow {
+  from {box-shadow: none;}
+  to {
+    margin: 10rem;
+    width: 1rem;
+  }
+}
+
+@keyframes shrink {
+  from {
+    margin: 10rem;
+    width: 1rem;
+  }
+  90% {
+    margin: 0rem;
+    width: 15rem;
+  }
+  to {
+    margin: -1rem;
+    width: 15rem;
+    box-shadow: none; 
+  }
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
