@@ -37,9 +37,10 @@ export const LoginPortal = () => {
   }
 
   return (
+    <>
+    {(credentials.authenticated) ? (<Loading className='login-load'/>) :
     <section className='login-board'>
-    {(credentials.authenticated) && (<Loading />)}
-      <article className='portal'>
+      <article className={`portal`}>
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <form className='login-form' onSubmit={handleSubmit}>
         {(!!credentials.error) && (<div className='error'>{credentials.error}</div>)}
@@ -83,11 +84,13 @@ export const LoginPortal = () => {
           </label>
         </div>
         <div className='buttons-container'>
-          <Button disable={!credentials.authenticated} type='submit' value='Log In' palette='primary' />
+          <Button disable={credentials.authenticated} type='submit' value='Log In' palette='primary' />
           <Button value='Register' palette='secondary' />
         </div>
       </form>
       </article>
     </section>
+    }
+    </>
   )
 }
