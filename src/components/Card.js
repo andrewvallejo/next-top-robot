@@ -16,7 +16,7 @@ export const Card = ({ robotInfo: {url, name}, vote, hasVoted}) => {
         <Button 
           palette='primary'
           activate={handleButton}
-          value={hasVoted ? 'Vote Cast' : 'Vote'}
+          value={'Vote'}
           isVoted={active} /> 
       </article>
     )
