@@ -15,7 +15,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        user: ''
+        token: ''
       };
     default:
       return state;
