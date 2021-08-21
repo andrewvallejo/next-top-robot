@@ -9,7 +9,7 @@
   width: 100%;
   background: $color-white;
   .left-container, .right-container {
-    @include flex (row, space-between);
+    @include flex (row, space-evenly);
     @include mediaQueries(navbar);
     &.left-container {
       .logo {
@@ -25,6 +25,7 @@
     }
     &.right-container {
       @include flex(column, center);
+      margin: auto;
       .burger-menu {
         @include mediaQueries(burger-visability);
         transition: 500ms;
