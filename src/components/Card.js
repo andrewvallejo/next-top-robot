@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 import { Button } from './Button'
 
-export const Card = ({ robotInfo: {url, name}, vote, hasVoted}) => {
+export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted}) => {
   const [active, setActive]= useState(false)
-
-    const handleButton = () => {
-      setActive(true)
-      vote()
-    }
-
+  
+    const handleButton = (id) => {
+        setActive(!active)
+        vote(id)
+  }
     return (
       <article className='card' >
         <h3>{name}</h3>
         <img className='robot-image' alt={`The robot named ${name}`} src={url} />
         <Button 
           palette='primary'
-          activate={handleButton}
-          value={'Vote'}
-          isVoted={active} /> 
+          activate={() => handleButton(id)}
+          isActive={active}
+          isVoted={hasVoted} /> 
       </article>
     )
-
 }
