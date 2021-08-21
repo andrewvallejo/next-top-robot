@@ -27,7 +27,8 @@ export const LoginPortal = () => {
     event.preventDefault();
      setCredentials({...credentials, authenticated: true, error: ''})
     await authenticateUser(credentials.email, credentials.password)
-    .then(({ token }) => dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }}))
+    .then(({ token }) => setTimeout(() => {dispatch({type: 'LOGIN', info:{ data: token, user: credentials.name }})
+  }, 6000))
   }
 
   return (
