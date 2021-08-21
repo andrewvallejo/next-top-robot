@@ -124,7 +124,7 @@
     }
     @if $property == navbar {
       transition: 500ms;
-      margin: 5rem;
+      margin-right: 30rem;
     }
     @if $property == burger-visability {
       transition: 200ms;
