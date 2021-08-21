@@ -1,26 +1,45 @@
-@keyframes grow {
+@keyframes grow-left {
   from {box-shadow: none;}
   to {
-    margin: 10rem;
-    width: 1rem;
+    box-shadow: $box-shadow-2-right;
+    transform: translateX(-10rem);
   }
 }
 
-@keyframes shrink {
-  from {
-    margin: 10rem;
-    width: 1rem;
-  }
-  90% {
-    margin: 0rem;
-    width: 15rem;
-  }
+@keyframes grow-right {
+  from {box-shadow: none;}
   to {
-    margin: -1rem;
-    width: 15rem;
+    box-shadow: $box-shadow-2-left;
+    transform: translateX(10rem);
+  }
+}
+
+
+@keyframes shrink-left {
+  from {
+    box-shadow: $box-shadow-2-right;
+    transform: translateX(-10rem);
+  }
+  80% {box-shadow: $box-shadow-2-right;}
+  to {
+    transform: translateX(0rem);
     box-shadow: none; 
   }
 }
+
+@keyframes shrink-right {
+  from {
+    transform: translateX(10rem);
+    box-shadow: $box-shadow-2-left;
+  }
+  80% {box-shadow: $box-shadow-2-left;}
+  to {
+    transform: translateX(0rem);
+    box-shadow: none; 
+  }
+}
+
+
 
 @keyframes fade-in {
   from {opacity: 0;}
