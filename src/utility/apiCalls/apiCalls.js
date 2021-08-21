@@ -10,9 +10,9 @@ const generateApiUrl = (request) => {
       return `${url}/auth/session`
     case 'register': 
       return `${url}/auth/register`
-    case 'user': 
-      return `${url}/users`
-    default:
+    case 'robots': 
+      return `${url}/robots`
+    default: 
       break;
   }
 }
@@ -28,7 +28,7 @@ export const authenticateUser = async(email, password) => {
     headers: {'x-robot-art-api-key': key},
     data: data
   }  
-  return sendRequest(config)
+  return await sendRequest(config)
 }
 
 export const expireSession = async(token) => {
@@ -37,8 +37,17 @@ export const expireSession = async(token) => {
     url: generateApiUrl('session'),
     headers: {'Authorization': `Bearer ${token}`}
   }
-  return sendRequest(config)
+  return await sendRequest(config)
 }
+
+export const retrieveRobots = async(token) => {
+  const config = {
+    method: 'get',
+    url: generateApiUrl('robots'),
+    headers: {'Authorization': `Bearer ${token}`}
+  }
+  return await sendRequest(config)
+};
 
 const sendRequest = async(config) => {
  return await axios(config)
