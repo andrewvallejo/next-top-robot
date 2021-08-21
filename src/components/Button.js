@@ -7,9 +7,10 @@ export const Button = ({ value, palette, activate, isVoted }) => {
     case 'Vote':
       return (
         <button 
-        className={`button ${palette}`} 
-        onClick={() => activate()}>
-          {value}
+        className={`button ${palette} ${isVoted && 'disable'}`} 
+        onClick={() => activate()}
+        disabled={isVoted}>
+          {isVoted ? 'Vote Cast' : 'Vote'}
         </button>
       )
     case 'Vote Cast':
