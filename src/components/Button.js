@@ -15,7 +15,7 @@ export const Button = ({ value, palette, activate, isVoted }) => {
     case 'Vote Cast':
        return (
         <button 
-        className={`button ${palette}`}
+        className={`button ${palette} ${isVoted ? 'disable' : ''}`}
         disabled={isVoted}>
           {value}
         </button>
