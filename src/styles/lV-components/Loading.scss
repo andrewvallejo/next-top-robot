@@ -1,4 +1,36 @@
 .load-container {
-  @include flex(column, center);
-  
-}
+  @include flex(row, center);
+  z-index: 0;
+  box-shadow: $box-shadow;
+  height: 100vh;
+  width: 100vw;
+  .website-title {
+    position: absolute;
+    top: 40%;
+    opacity: 0;
+    animation: fade-in 1s linear 3.1s normal forwards;
+    font-size: 2.2rem;
+  }
+  .logo {
+    position: absolute;
+  }
+  .backdrop {
+    position: absolute;
+    z-index: -1;
+    top: 38%;
+    opacity: 0;
+    animation: fade-in 5s linear 3s normal forwards;
+    box-shadow: $box-shadow-1;
+    width:18rem;
+    height: 10rem;
+    background: $color-transparent;
+  }
+  .box {
+    z-index: 3;
+    animation: grow 2s linear 750ms normal forwards,
+               shrink 1s linear 5s normal forwards;
+    width: 15rem;
+    height: 20rem;
+    background: $color-gray-0;
+    }
+  } 
