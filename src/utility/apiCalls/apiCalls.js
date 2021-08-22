@@ -66,12 +66,12 @@ export const retrieveRobots = async(token) => {
 
 export const voteForRobot = async(id, token) => {
   const config = {
-    method: 'get',
+    method: 'post',
     url: generateApiUrl('votes'),    
     headers: {'Authorization': `Bearer ${token}`},
     data : {'robot': id}
   };
-  return await sendRequest(config)
+  await sendRequest(config)
 }
 
 export const undoVote = async(id, token) => {
