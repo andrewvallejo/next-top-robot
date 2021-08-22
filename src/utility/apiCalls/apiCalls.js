@@ -32,6 +32,20 @@ export const authenticateUser = async(email, password) => {
   return await sendRequest(config)
 }
 
+export const registerUser = async (name, email, password) => { 
+  const config = {
+    method: 'post',
+    url: generateApiUrl('register'),
+    headers: {'x-robot-art-api-key': key},
+    data: {
+      'name': name,
+      'email': email,
+      'password': password
+    }
+  }
+  return await sendRequest(config)
+}
+
 export const expireSession = async(token) => {
   const config = {
     method: 'delete',
