@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react'
+import { useLocation } from 'react-router-dom';
 import logo from '../assets/mr-logo.png'
-import { authenticateUser  } from '../utility/apiCalls/apiCalls';
+import { authenticateUser, registerUser  } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Button } from './Button'
 import { Loading } from './Loading';
 
 
 export const LoginPortal = () => {
+  
   const initialState = {
     name: '',
     email: '',
@@ -17,6 +19,8 @@ export const LoginPortal = () => {
   
   const { dispatch } = useContext(AuthContext)
   const [credentials, setCredentials] = useState({ initialState })
+  const isRegistration = (useLocation().pathname === '/registration')
+  console.log(isRegistration)
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -25,6 +29,7 @@ export const LoginPortal = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
+    return credentials.registration ? handleRegistration(event) :  
     await authenticateUser(credentials.email, credentials.password)
     .then(({ token }) => {
       setCredentials({...credentials, authenticated: true, error: ''})
@@ -37,6 +42,18 @@ export const LoginPortal = () => {
     }) 
   }
 
+const handleRegistration = async(event) => {
+  event.preventDefault();
+  await registerUser(credentials)
+  .then(() => {
+    setCredentials({...credentials, error: 'Registered!'})
+    handleSubmit(event)})
+  .catch(() => {
+    event.preventDefault()
+    setCredentials({...credentials, error: 'Fill out all required information'})
+  }) 
+}
+
   return (
     <>
     {(credentials.authenticated) ? (<Loading className='login-load'/>) :
@@ -45,7 +62,8 @@ export const LoginPortal = () => {
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <form className='login-form' onSubmit={handleSubmit}>
         {(!!credentials.error) && (<div className='error'>{credentials.error}</div>)}
-        {/* <div className='form-inputs'>
+        {isRegistration &&
+          <div className='form-inputs'>
           <label htmlFor='name'>
             <fieldset className='input-label'>
               <legend className='input-name'>Full name</legend>
@@ -58,7 +76,7 @@ export const LoginPortal = () => {
               onChange={(e) => handleInput(e)} />
             </fieldset>
           </label>
-        </div> */}
+        </div>}
         <div className='form-inputs'>
           <label htmlFor='email'>
             <fieldset className='input-label'>
@@ -85,8 +103,8 @@ export const LoginPortal = () => {
           </label>
         </div>
         <div className='buttons-container'>
-          <Button disable={credentials.authenticated} type='submit' value='Log In' palette='primary' />
-          <Button value='Register' palette='secondary' />
+          <Button disable={credentials.authenticated} type='submit' value='Login' palette='primary' />
+          <Button value='Register' palette='secondary'/>
         </div>
       </form>
       </article>
