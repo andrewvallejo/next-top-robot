@@ -97,15 +97,3 @@ const sendRequest = async(config) => {
   .then((response) => {console.log(response); return response.data})
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
-  
-
-
-
- 
-
- 
-
-
- 
-
-
