@@ -47,6 +47,7 @@ export const registerUser = async ({ name, email, password }) => {
 }
 
 export const expireSession = async(token) => {
+  console.log(token)
   const config = {
     method: 'delete',
     url: generateApiUrl('session'),
@@ -55,7 +56,7 @@ export const expireSession = async(token) => {
   return await sendRequest(config)
 }
 
-export const retrieveRobots = async({ token }) => {
+export const retrieveRobots = async(token) => {
   const config = {
     method: 'get',
     url: generateApiUrl('robots'),
@@ -83,7 +84,7 @@ export const undoVote = async(id, token) => {
   return await sendRequest(config)
 }
 
-export const tallyResults = async({ token }) => {
+export const tallyResults = async(token) => {
   const config = {
     method: 'get',
     url: generateApiUrl('votes'),    
@@ -94,6 +95,8 @@ export const tallyResults = async({ token }) => {
 
 const sendRequest = async(config) => {
  return await axios(config)
-  .then((response) => {console.log(response); return response.data})
+  .then((response) => response.data)
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
+
+// console.log(response); return 
