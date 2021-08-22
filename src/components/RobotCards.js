@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { retrieveRobots, undoVote, voteForRobot } from '../utility/apiCalls/apiCalls';
+import { retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
 import { Card } from './Card'
 
@@ -8,11 +8,14 @@ export const RobotCards = () => {
   const [uploaded, setUploaded] = useState(false)
   const [robots, setRobots] = useState([])  
   const [robotId, setRobotId] = useState('')
+  const [results, setResults] = useState('')
 
   useEffect(() => {
     (async () => {
       await retrieveRobots(token)
       .then((data) => setRobots(data))
+      await tallyResults(token)
+      .then((data) => setResults(data))
     })()
   }, [token])
 
@@ -30,7 +33,7 @@ export const RobotCards = () => {
 
   return robots.map((robot) => {
     return (
-          <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} />
+      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} results={results} />
     )
   })
 }
