@@ -24,8 +24,13 @@ export const Button = ({ code, value, palette, activate, isVoted , isActive}) =>
           to={isTriggered ? '/login' : '/registration'}>
           {value}
         </NavLink>
-      ) 
-  
+      )
+    case 'admin': 
+    return (
+      <button className={`button ${palette} admin`}>
+        {value}
+      </button>
+      )
     default:
       return (
       <button className={`button ${palette}`}>
