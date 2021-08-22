@@ -5,6 +5,11 @@
     padding:  1rem 3rem;
     background: $color-gray-3;
     color: $color-white;
+    &.vote, &.admin {
+      width: 9.5rem;
+      height: 3.5rem;
+      padding: unset;
+    }
     &:hover {
       transition: 200ms;
       background: $color-gray-2;
@@ -13,17 +18,11 @@
       background: $color-gray-3;
       color: $color-white;
     }
-    &.vote, &.admin {
-      width: 9.5rem;
-      height: 3.5rem;
-      padding: unset;
-    }
     &.disable {
       background: $color-gray-1;
       color: $color-gray-3;
       opacity: 0.4;
       min-width: 3rem;
-
     }
   } 
   &.secondary {
