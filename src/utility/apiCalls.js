@@ -65,6 +65,15 @@ export const retrieveRobots = async(token) => {
   return await sendRequest(config)
 };
 
+export const deleteRobot = async(id, token) => {
+  const config = {
+    method: 'delete',
+    url: `${url}/robots/${id}`,    
+    headers: {'Authorization': `Bearer ${token}`}
+  };
+  return await sendRequest(config)
+}
+
 export const voteForRobot = async(id, token) => {
   const config = {
     method: 'post',
@@ -95,7 +104,7 @@ export const tallyResults = async(token) => {
 
 const sendRequest = async(config) => {
  return await axios(config)
-  .then((response) => response.data)
+  .then((response) => {console.log(response); return response.data})
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
 
