@@ -9,6 +9,7 @@ export const RobotCards = () => {
   const [robots, setRobots] = useState([])  
   const [robotId, setRobotId] = useState('')
   const [results, setResults] = useState([])
+  const [voteId, setVoteId] = useState('')
 
   useEffect(() => {
     (async () => {
@@ -21,16 +22,19 @@ export const RobotCards = () => {
 
   const handleVote = async (id) => {
     if (robotId !== id && !robotId) {
+      await voteForRobot(id, token)
+      .then(data => setVoteId(data.id))
       setUploaded(true)
       setRobotId(id)
-      await voteForRobot(id, token)
-    } else if (robotId === id ) {
+    } else if (robotId === id) {
+      await undoVote(voteId, token)
       setUploaded(false)
       setRobotId('')
-      await undoVote(id, token)
+      setVoteId('')
     }
   }
 
+  console.log(results)
   
   return robots.map((robot) => {
     const robotVotes = results.map(result => result.robot)
