@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import logo from '../assets/mr-logo.png'
 import { authenticateUser, registerUser  } from '../utility/apiCalls/apiCalls';
 import { AuthContext } from '../utility/apiCalls/AuthContext';
@@ -8,19 +8,20 @@ import { Loading } from './Loading';
 
 
 export const LoginPortal = () => {
-  
   const initialState = {
     name: '',
     email: '',
     password: '',
     authenticated: false,
+    registered: false, 
     error: ''
   }
   
   const { dispatch } = useContext(AuthContext)
   const [credentials, setCredentials] = useState({ initialState })
   const isRegistration = (useLocation().pathname === '/registration')
-  console.log(isRegistration)
+  const history = useHistory();
+
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -29,13 +30,15 @@ export const LoginPortal = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    return credentials.registration ? handleRegistration(event) :  
-    await authenticateUser(credentials.email, credentials.password)
+    return !credentials.registered && isRegistration ? handleRegistration(event) :  
+    await authenticateUser(credentials)
     .then(({ token }) => {
       setCredentials({...credentials, authenticated: true, error: ''})
       setTimeout(() => {
         dispatch({type: 'LOGIN', info: token})
-      }, 6000)})
+      }, 6000)
+      history.push("/robots");
+    })
     .catch(() => {
       event.preventDefault()
       setCredentials({...credentials, authenticated: false, error: 'Fill out the correct email and password'})
@@ -46,8 +49,9 @@ const handleRegistration = async(event) => {
   event.preventDefault();
   await registerUser(credentials)
   .then(() => {
-    setCredentials({...credentials, error: 'Registered!'})
-    handleSubmit(event)})
+    setCredentials({...credentials, registered: true, error: 'Registered!'})
+    history.push("/login");
+    })
   .catch(() => {
     event.preventDefault()
     setCredentials({...credentials, error: 'Fill out all required information'})
@@ -62,7 +66,7 @@ const handleRegistration = async(event) => {
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <form className='login-form' onSubmit={handleSubmit}>
         {(!!credentials.error) && (<div className='error'>{credentials.error}</div>)}
-        {isRegistration &&
+        {isRegistration && !credentials.registered &&
           <div className='form-inputs'>
           <label htmlFor='name'>
             <fieldset className='input-label'>
@@ -103,8 +107,11 @@ const handleRegistration = async(event) => {
           </label>
         </div>
         <div className='buttons-container'>
-          <Button disable={credentials.authenticated} type='submit' value='Login' palette='primary' />
-          <Button value='Register' palette='secondary'/>
+          <Button disable={credentials.authenticated} 
+          type='submit' 
+          value={isRegistration && !credentials.registered ? 'Register' : 'Login'} 
+          palette='primary' />
+            <Button code='register' value={isRegistration ? 'Back to Login' : 'Register'} palette='secondary'/>
         </div>
       </form>
       </article>
