@@ -18,16 +18,18 @@ export const Button = ({ code, value, palette, activate, isVoted , isActive}) =>
     case 'register':
       return (
         <NavLink
-          className={`button 
-          ${palette}`}
-          onClick={() => setIsTriggered(!isTriggered)} 
-          to={isTriggered ? '/login' : '/registration'}>
+        className={`button 
+        ${palette}`}
+        onClick={() => setIsTriggered(!isTriggered)} 
+        to={isTriggered ? '/login' : '/registration'}>
           {value}
         </NavLink>
       )
     case 'admin': 
     return (
-      <button className={`button ${palette} admin`}>
+      <button 
+      className={`button ${palette} admin`}
+      onClick={() => activate()}>
         {value}
       </button>
       )
