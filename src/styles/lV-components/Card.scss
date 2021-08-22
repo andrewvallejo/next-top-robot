@@ -1,7 +1,7 @@
 .card {
   @include flex(column, space-around);
   @include mediaQueries(card-size);
-  padding: 2.5rem 1.5rem 1.5rem;
+  padding: 2.5rem 1.25rem 1.25rem;
   > .robot-image {
     height: 20rem;
     width: 22rem;
@@ -32,4 +32,9 @@
         border-radius: $border-radius-progress-bar;
     }
   }
+  .buttons-container {
+    @include flex(row, space-between);
+    width: 100%;  
+  }
 }
+
