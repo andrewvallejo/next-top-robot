@@ -19,13 +19,12 @@ export const Button = ({ value, palette, activate, isVoted , isActive}) => {
       return (
         <NavLink
           className={`button 
-          ${palette}
-          ${isTriggered ? 'active' : ' '} `}
+          ${palette}`}
           onClick={() => setIsTriggered(!isTriggered)} 
-          to='/robots' >
-          {value}
+          to={isTriggered ? '/login' : '/registration'}>
+          {isTriggered ? 'Back to Login' : value}
         </NavLink>
-      )
+      ) 
       case 'Results':
         return (
           <h1> lol</h1>
