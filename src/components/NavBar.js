@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import logo from  '../assets/mr-logo.png';
-import { AuthContext } from '../utility/apiCalls/AuthContext';
+import { AuthContext } from '../utility/AuthContext';
 import { BurgerMenu } from './BurgerMenu';
-import { expireSession } from '../utility/apiCalls/apiCalls';
+import { expireSession } from '../utility/apiCalls';
 import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
