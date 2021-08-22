@@ -1,12 +1,13 @@
 import React, { useEffect, useReducer } from 'react';
 import { Route, Switch } from  'react-router-dom';
-import { AuthContext } from '../utility/apiCalls/AuthContext';
+import { AuthContext } from '../utility/AuthContext';
 import { Home } from './Home';
 import { LoginPortal } from './LoginPortal';
-import { reducer } from '../utility/apiCalls/reducer';
+import { reducer } from '../utility/reducer';
 
 const initalState = {
   isAuthenticated: false,
+  isAdmin: false, 
   token: '',
   error: '',
 }
