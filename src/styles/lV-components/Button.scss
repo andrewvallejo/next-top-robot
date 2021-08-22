@@ -13,7 +13,7 @@
       background: $color-gray-3;
       color: $color-white;
     }
-    &.vote {
+    &.vote, &.admin {
       width: 9.5rem;
       height: 3.5rem;
       padding: unset;
@@ -37,7 +37,7 @@
     &:active {
       background: $color-gray-3;
       color: $color-white;
-    }
+    }   
     &.disable {
       background: $color-gray-1;
       color: $color-gray-3;
