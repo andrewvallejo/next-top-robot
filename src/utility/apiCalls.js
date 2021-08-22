@@ -56,7 +56,6 @@ export const expireSession = async(token) => {
 }
 
 export const retrieveRobots = async({ token }) => {
-
   const config = {
     method: 'get',
     url: generateApiUrl('robots'),
