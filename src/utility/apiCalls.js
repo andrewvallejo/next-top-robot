@@ -55,7 +55,8 @@ export const expireSession = async(token) => {
   return await sendRequest(config)
 }
 
-export const retrieveRobots = async(token) => {
+export const retrieveRobots = async({ token }) => {
+
   const config = {
     method: 'get',
     url: generateApiUrl('robots'),
@@ -83,7 +84,7 @@ export const undoVote = async(id, token) => {
   return await sendRequest(config)
 }
 
-export const tallyResults = async(token) => {
+export const tallyResults = async({ token }) => {
   const config = {
     method: 'get',
     url: generateApiUrl('votes'),    
