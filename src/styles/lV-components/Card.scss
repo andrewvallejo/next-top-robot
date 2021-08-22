@@ -30,8 +30,8 @@
       &::-moz-progress-bar {
         background: $color-gray-3;
         border-radius: $border-radius-progress-bar;
+      }
     }
-  }
   .buttons-container {
     @include flex(row, space-between);
     width: 100%;  
