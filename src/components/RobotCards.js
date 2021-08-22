@@ -8,7 +8,7 @@ export const RobotCards = () => {
   const [uploaded, setUploaded] = useState(false)
   const [robots, setRobots] = useState([])  
   const [robotId, setRobotId] = useState('')
-  const [results, setResults] = useState('')
+  const [results, setResults] = useState([])
 
   useEffect(() => {
     (async () => {
@@ -31,9 +31,11 @@ export const RobotCards = () => {
     }
   }
 
+  
   return robots.map((robot) => {
+    const robotVotes = results.map(result => result.robot)
     return (
-      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} results={results} />
+      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} />
     )
   })
 }
