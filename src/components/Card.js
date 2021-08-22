@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useLocation, useRouteMatch } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Button } from './Button'
 
-export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted}) => {
+export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, results}) => {
   const [active, setActive]= useState(false)
   const path = useLocation().pathname
   let insert;
@@ -19,8 +19,8 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted}) => {
       } else if (path === '/results') {
         insert = 
         <>
-        <label for="results"><h2>11<span className='out-of'>/55</span></h2></label>
-        <progress className='results-bar' for="results" value="11" max="55">70 %</progress>
+        <label htmlFor="results"><h2>{results.length}<span className='out-of'>/55</span></h2></label>
+        <progress className='results-bar' htmlFor="results" value={results} max="55">70 %</progress>
         </>
       } 
 
