@@ -40,12 +40,12 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes}) 
       <div className='buttons-container'>
       <Button 
       palette='primary'
-      activate={() => handleButton(id)}
+      code='admin'
       value='Edit'
       isActive={active}/>
       <Button 
       palette='secondary'
-      activate={() => handleButton(id)}
+      code='admin'
       value='Delete'
       isActive={active}/>
       </div>
