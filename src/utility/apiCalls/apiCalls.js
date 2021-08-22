@@ -19,7 +19,7 @@ const generateApiUrl = (request) => {
   }
 }
 
-export const authenticateUser = async(email, password) => {
+export const authenticateUser = async({ email, password }) => {
   const config = {
     method: 'post',
     url: generateApiUrl('session'),
@@ -32,7 +32,7 @@ export const authenticateUser = async(email, password) => {
   return await sendRequest(config)
 }
 
-export const registerUser = async (name, email, password) => { 
+export const registerUser = async ({ name, email, password }) => { 
   const config = {
     method: 'post',
     url: generateApiUrl('register'),
