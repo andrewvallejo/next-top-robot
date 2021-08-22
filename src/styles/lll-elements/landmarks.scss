@@ -14,8 +14,9 @@ header {
 
 main {
   @include mediaQueries(overflow);
+  overflow-y: auto;
   width: 100vw;
-  height: 100vh;
+  padding-bottom: 3rem;
 }
 
 article {
