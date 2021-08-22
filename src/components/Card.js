@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Button } from './Button'
 
-export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes}) => {
+export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, deleteRobot }) => {
   const [active, setActive]= useState(false)
   const [count, setCount] = useState(0)
   const path = useLocation().pathname
@@ -11,14 +11,13 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes}) 
   useEffect(() => {
     const robotTotalVotes = totalVotes.filter((vote) => vote === id)
     setCount(() => robotTotalVotes.length)
-  }, [totalVotes, id ])
+  }, [totalVotes, id, count ])
 
  
   const handleButton = (id) => {
     setActive(!active)
     vote(id)
   }
-
 
   if (path === '/robots') {
     insert =  (
@@ -46,6 +45,7 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes}) 
       <Button 
       palette='secondary'
       code='admin'
+      activate={() => deleteRobot(id)}
       value='Delete'
       isActive={active}/>
       </div>
