@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls';
+import { deleteRobot, retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls';
 import { AuthContext } from '../utility/AuthContext';
 import { Card } from './Card'
 
@@ -18,7 +18,7 @@ export const RobotCards = () => {
       await tallyResults(token)
       .then((data) => setResults(data))
     })()
-  }, [token])
+  }, [token, robots])
 
   const handleVote = async (id) => {
     if (robotId !== id && !robotId) {
@@ -33,10 +33,17 @@ export const RobotCards = () => {
       setVoteId('')
     }
   }
+
+  const handleDelete = (id) => {
+    deleteRobot(id, token)
+    retrieveRobots(token)
+  }
+
+
   return robots.map((robot) => {
     const robotVotes = results.map(result => result.robot)
     return (
-      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} />
+      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} deleteRobot={handleDelete} />
     )
   })
 }
