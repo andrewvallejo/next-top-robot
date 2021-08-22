@@ -6,7 +6,7 @@
     @include mediaQueries(portal);
     @include flex(column, space-around);
     background: $color-white;
-    padding: 3.75rem 4rem;
+    padding: 9rem 4rem;
     .logo {
       margin-bottom: 2rem;
     }
