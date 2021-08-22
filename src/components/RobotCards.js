@@ -33,9 +33,6 @@ export const RobotCards = () => {
       setVoteId('')
     }
   }
-
-  console.log(results)
-  
   return robots.map((robot) => {
     const robotVotes = results.map(result => result.robot)
     return (
