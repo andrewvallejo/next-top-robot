@@ -22,7 +22,7 @@ export const App = () => {
     <AuthContext.Provider value={{ state, dispatch }}>
       <Switch>
         {state.isAuthenticated ? <Home /> : <LoginPortal /> }
-        <Route exact path={['/', '/login']}>
+        <Route exact path={['/login', '/register']}>
           <LoginPortal />
         </Route>
         <Route exact path={['/', '/robots']}>
