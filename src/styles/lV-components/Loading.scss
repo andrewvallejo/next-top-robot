@@ -6,7 +6,7 @@
   width: 100vw;
   .website-title {
     @include mediaQueries(web-title-position);
-    position: absolute;
+    position: fixed;
     opacity: 0;
     animation: fade-in 1s linear 3.1s normal forwards;
     font-size: 2.2rem;
@@ -15,14 +15,14 @@
     position: absolute;
   }
   .backdrop {
-    @include mediaQueries(web-title-position);
-    position: absolute;
+    @include mediaQueries(backdrop-position);
+    position: fixed;
     z-index: -1;
     opacity: 0;
     animation: fade-in 5s linear 3s normal forwards;
     box-shadow: $box-shadow-1;
     width:18rem;
-    height: 10rem;
+    height: 12rem;
     background: $color-transparent;
   }
   .box {
@@ -33,11 +33,11 @@
     background: $color-gray-0;
     &.one {
       animation: grow-left 2s linear 500ms normal forwards,
-      shrink-left 1s linear 4.5s normal forwards;
+      shrink-left 1s linear 4.7s normal forwards;
     } 
     &.two {
       animation: grow-right 2s linear 500ms normal forwards,
-      shrink-right 1s linear 4.5s normal forwards;
+      shrink-right 1s linear 4.7s normal forwards;
     } 
       
     }
