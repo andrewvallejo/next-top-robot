@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react'
 import { useLocation, useHistory } from 'react-router-dom';
 import logo from '../assets/mr-logo.png'
-import { authenticateUser, registerUser  } from '../utility/apiCalls/apiCalls';
-import { AuthContext } from '../utility/apiCalls/AuthContext';
-import { Button } from './Button'
+import { authenticateUser, registerUser  } from '../utility/apiCalls';
+import { AuthContext } from '../utility/AuthContext';
+import { checkAuthority } from '../utility/authority';
+import { Button } from './Button';
 import { Loading } from './Loading';
-
 
 export const LoginPortal = () => {
   const initialState = {
@@ -17,11 +17,11 @@ export const LoginPortal = () => {
     error: ''
   }
   
+  
   const { dispatch } = useContext(AuthContext)
   const [credentials, setCredentials] = useState({ initialState })
   const isRegistration = (useLocation().pathname === '/registration')
   const history = useHistory();
-
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -33,9 +33,10 @@ export const LoginPortal = () => {
     return !credentials.registered && isRegistration ? handleRegistration(event) :  
     await authenticateUser(credentials)
     .then(({ token }) => {
+      const privledges = checkAuthority(credentials.email)
       setCredentials({...credentials, authenticated: true, error: ''})
       setTimeout(() => {
-        dispatch({type: 'LOGIN', info: token})
+        dispatch({type: 'LOGIN', info: {token, privledges}})
       }, 6000)
       history.push("/robots");
     })
