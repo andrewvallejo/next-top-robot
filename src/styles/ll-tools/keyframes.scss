@@ -20,7 +20,7 @@
     box-shadow: $box-shadow-2-right;
     transform: translateX(-10rem);
   }
-  80% {box-shadow: $box-shadow-2-right;}
+  75% {box-shadow: $box-shadow-2-right;}
   to {
     transform: translateX(0rem);
     box-shadow: none; 
@@ -32,7 +32,7 @@
     transform: translateX(10rem);
     box-shadow: $box-shadow-2-left;
   }
-  80% {box-shadow: $box-shadow-2-left;}
+  75% {box-shadow: $box-shadow-2-left;}
   to {
     transform: translateX(0rem);
     box-shadow: none; 
