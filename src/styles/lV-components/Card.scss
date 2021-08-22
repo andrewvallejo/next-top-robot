@@ -6,4 +6,30 @@
     height: 20rem;
     width: 22rem;
   }
+  .out-of {
+    @extend p;
+    color: $color-gray-2;
+  }
+    .results-bar {
+      overflow: hidden;
+      border: 2px solid $color-gray-1;
+      border-radius: $border-radius;
+      height: 2.125rem;
+      width: 22rem;
+      padding: .125rem;
+      color: $color-gray-3;
+      &::-webkit-progress-bar {
+        border-radius: $border-radius-progress-bar;
+        background: $color-white;
+        color: $color-gray-3;
+      }
+      &::-webkit-progress-value {
+        background: $color-gray-3;
+        border-radius: $border-radius-progress-bar;
+      }
+      &::-moz-progress-bar {
+        background: $color-gray-3;
+        border-radius: $border-radius-progress-bar;
+    }
+  }
 }
