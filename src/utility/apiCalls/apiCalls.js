@@ -71,7 +71,7 @@ export const voteForRobot = async(id, token) => {
     headers: {'Authorization': `Bearer ${token}`},
     data : {'robot': id}
   };
-  await sendRequest(config)
+  return await sendRequest(config)
 }
 
 export const undoVote = async(id, token) => {
