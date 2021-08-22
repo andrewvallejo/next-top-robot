@@ -44,13 +44,17 @@
     @if $property == portal {
       width: 100vw;
       height: 100vh;
+      overflow: hidden;
       border-radius: 0;
     }
     @if $property == input-width {
       width: 20rem;
     }
     @if $property == web-title-position {
-      top: 38%;
+      top: 37%;
+    }
+    @if $property == backdrop-position {
+      top: 34%;
     }
   }
 }
@@ -111,7 +115,10 @@
       width: 31rem;
     }
     @if $property == web-title-position {
-      top: 36%;
+      top: 37%;
+    }
+    @if $property == backdrop-position {
+      top: 33%;
     }
   }
 }
@@ -155,7 +162,10 @@
       width: 31rem;
     }
     @if $property == web-title-position {
-      top: 39%;
+      top: 36%;
+    }
+    @if $property == backdrop-position {
+      top: 33%;
     }
   }
 }
