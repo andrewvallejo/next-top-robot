@@ -69,6 +69,15 @@ export const undoVote = async(id, token) => {
   return await sendRequest(config)
 }
 
+export const tallyResults = async(token) => {
+  const config = {
+    method: 'get',
+    url: generateApiUrl('votes'),    
+    headers: {'Authorization': `Bearer ${token}`},
+  };
+  return await sendRequest(config)
+}
+
 const sendRequest = async(config) => {
  return await axios(config)
   .then((response) => {console.log(response); return response.data})
