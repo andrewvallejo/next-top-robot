@@ -9,7 +9,7 @@ export const Button = ({ value, palette, activate, isVoted , isActive}) => {
     case 'Vote':
       return (
         <button 
-        className={`button ${palette} ${isTriggered && 'disable'}`} 
+        className={`button ${palette} ${isTriggered && 'disable'} vote`} 
         onClick={() => {activate(); setIsTriggered(!isTriggered)}}
         disabled={isVoted && !isActive}>
           {isTriggered ? 'Vote Cast' : 'Vote'}
@@ -26,6 +26,18 @@ export const Button = ({ value, palette, activate, isVoted , isActive}) => {
           {value}
         </NavLink>
       )
+      case 'Results':
+        return (
+          <h1> lol</h1>
+          // <NavLink
+          //   className={`button 
+          //   ${palette}
+          //   ${isTriggered ? 'active' : ' '} `}
+          //   onClick={() => setIsTriggered(!isTriggered)} 
+          //   to='/robots' >
+          //   {value}
+          // </NavLink>
+        )
     default:
       return (
         <button className={`button ${palette}`}>
