@@ -6,13 +6,15 @@ export const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        token: info
+        isAdmin: info.privledges,
+        token: info.token,
       };
     case "LOGOUT":
       localStorage.clear();
       return {
         ...state,
         isAuthenticated: false,
+        isAdmin: false,
         token: ''
       };
       case "AUTOLOGIN": 
