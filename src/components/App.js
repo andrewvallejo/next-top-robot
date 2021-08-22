@@ -14,7 +14,7 @@ const initalState = {
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initalState)
-
+  
   useEffect(() => {
     dispatch({type: 'AUTOLOGIN', info: ''})
   }, [])
