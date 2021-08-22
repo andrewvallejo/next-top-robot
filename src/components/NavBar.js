@@ -31,7 +31,7 @@ export const NavBar = () => {
       </section>
       <section className='right-container'>
         <nav className='nav-container'>
-          <NavLink to='/admin'>Admin</NavLink>
+          {authState.isAdmin && <NavLink to='/admin'>Admin</NavLink>}
           <NavLink to=  '/' onClick={handleLogOut}>Log Out</NavLink>
           <BurgerMenu />
         </nav>
