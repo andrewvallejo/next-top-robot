@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls/apiCalls';
-import { AuthContext } from '../utility/apiCalls/AuthContext';
+import { retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls';
+import { AuthContext } from '../utility/AuthContext';
 import { Card } from './Card'
 
 export const RobotCards = () => {
