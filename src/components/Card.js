@@ -11,7 +11,7 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
   useEffect(() => {
     const robotTotalVotes = totalVotes.filter((vote) => vote === id)
     setCount(() => robotTotalVotes.length)
-  }, [totalVotes, id, count ])
+  }, [totalVotes, id, count])
 
  
   const handleButton = (id) => {
