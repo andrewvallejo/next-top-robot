@@ -47,7 +47,6 @@ export const RobotCards = () => {
     const robotVotes = results.map(result => result.robot)
     return (
       <>
-        {(path === '/admin') && <Card />}
         <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} deleteRobot={handleDelete} />
       </>
     )
