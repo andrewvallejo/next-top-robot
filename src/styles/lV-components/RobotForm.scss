@@ -1,0 +1,13 @@
+.robot-form {
+  @include flex(column, space-around);
+  width: 100%;
+  .form-inputs {
+    width: 100%;
+    .robot-label {
+      width: 100%;
+      .input-label {
+        width: 100%;
+      }  
+    }    
+  }
+}
