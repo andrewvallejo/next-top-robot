@@ -20,7 +20,7 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
     vote(id)
   }
 
-  if (path === '/robots') {
+  if (path === '/robots' || path === '/' ) {
     insert =  (
       <Button 
       palette='primary'
@@ -61,7 +61,10 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
           <img className='robot-image' alt={`The robot named ${name}`} src={url} />
           {insert}
         </article> :
-        <RobotForm />}
+        <article className='card'>
+          <RobotForm />
+        </article>}
+
       </>
     )
 }
