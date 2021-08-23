@@ -1,4 +1,5 @@
 import React from 'react'
+import { AdminCard } from './AdminCard'
 import { BoardHeader } from './BoardHeader'
 import { NavBar } from './NavBar'
 import { RobotCards } from './RobotCards'
@@ -10,7 +11,8 @@ export const Home = () => {
       <main>       
         <BoardHeader />
         <section className='robot-board'>
-          <RobotCards />
+        <AdminCard />
+        <RobotCards />
         </section>
       </main>
     </>
