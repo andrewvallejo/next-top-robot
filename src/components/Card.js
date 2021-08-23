@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Button } from './Button'
+import { RobotForm } from './RobotForm'
 
 export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, deleteRobot }) => {
   const [active, setActive]= useState(false)
@@ -54,11 +55,13 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
 
     return (
       <>
-      <article className='card'>
-        {!!name && <h3>{name}</h3>}
-        {!!url && <img className='robot-image' alt={`The robot named ${name}`} src={url} />}
-        {!!id && insert}
-      </article>
+        {!!url ? 
+        <article className='card'>
+          <h3>{name}</h3>
+          <img className='robot-image' alt={`The robot named ${name}`} src={url} />
+          {insert}
+        </article> :
+        <RobotForm />}
       </>
     )
 }
