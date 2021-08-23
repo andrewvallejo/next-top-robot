@@ -63,14 +63,29 @@ export const retrieveRobots = async(token) => {
     headers: {'Authorization': `Bearer ${token}`}
   }
   return await sendRequest(config)
-};
+}
+
+export const addRobot = async(data, token) => {
+  const config = {
+    method: 'post',
+    url: generateApiUrl('robots'),
+    headers: { 
+      'Authorization': `Bearer ${token}`, 
+      ...data.getHeaders()
+    },
+    data : data
+  }
+  return await sendRequest(config)
+
+}
+   
 
 export const deleteRobot = async(id, token) => {
   const config = {
     method: 'delete',
     url: `${url}/robots/${id}`,    
     headers: {'Authorization': `Bearer ${token}`}
-  };
+  }
   return await sendRequest(config)
 }
 
@@ -80,7 +95,7 @@ export const voteForRobot = async(id, token) => {
     url: generateApiUrl('votes'),    
     headers: {'Authorization': `Bearer ${token}`},
     data : {'robot': id}
-  };
+  }
   return await sendRequest(config)
 }
 
@@ -89,7 +104,7 @@ export const undoVote = async(id, token) => {
     method: 'delete',
     url: `${url}/votes/${id}`,    
     headers: {'Authorization': `Bearer ${token}`},
-  };
+  }
   return await sendRequest(config)
 }
 
@@ -98,7 +113,7 @@ export const tallyResults = async(token) => {
     method: 'get',
     url: generateApiUrl('votes'),    
     headers: {'Authorization': `Bearer ${token}`},
-  };
+  }
   return await sendRequest(config)
 }
 
@@ -108,4 +123,4 @@ const sendRequest = async(config) => {
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
 
-// console.log(response); return 
+// console.log(response) return 
