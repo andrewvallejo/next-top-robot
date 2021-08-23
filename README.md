@@ -1,17 +1,16 @@
-
 <div align="center">
 
 # Next Top Robot
 
 ![image](https://user-images.githubusercontent.com/17935770/129827835-7649f2e6-cd28-4206-b3f7-4788e09ba53f.png)
 
-  By the end of 2021, there will be **3,788,000** robots. This is nearly a million more units compared to the amount of robots counted in 2019. If you were to purchase a new robot every day, it would take you over **10,000** years to aqcuire each robots, and by then the world would probably be own by them. Obviously, this isn't feasible for robot-loving fanatics at Mondo Robot.
+  By the end of 2021, there will be **3,788,000** robots. This number is nearly a million more units compared to the number of robots counted in 2019. If you were to purchase a new robot every day, it would take you over **10,000** years to acquire each robot, and by then, the world would probably be own by them. Knowing the statistics, this was not feasible for robot-loving fanatics at Mondo Robot.
 
   <details>
   <summary>
   Disclaimer about the project
   </summary>
-  This project is a skill test designed by Mondo Robot as a means to gauge competency in front-end development. This take home test was completed in 7 days.
+  This project is a skill test designed by Mondo Robot to gauge competency in front-end development. My task was to fulfill all of the project's features by accessing the API provided and building a website within seven days. The front end also matched the wireframe, including the three media breakpoints: mobile, tablet, and desktop.
 </details>
 
 ---
@@ -26,7 +25,7 @@
 
 </div>
 
-Clone the project, install depdencies, and run.
+Clone the project, install dependencies, and run.
 
 ```jsx
 git clone git@github.com:andrewvallejo/next-top-robot.git
@@ -35,11 +34,11 @@ npm install
 npm start
 ```
 
-Simply register an account and login. Vote on your favorite robot and see how it fairs against its competition in the results page! Change your mind? Go back to the voting page and take back your vote to vote again!
+Register an account and log in. Vote on your favorite robot and see how it fairs against its competition on the results page! Change your mind? Go back to the voting page and take back your vote to vote again!
 
-Want more?  Log in as an Admin where you can add another robot to the poll. Don't like your competition? Simply delete it! 
+Want more?  Log in as an Admin, where you can add another robot to the poll. Don't like your competition? Delete it! 
 
-Log in with the admin credentials
+Log in with the admin credentials.
 
 ```jsx
 Email: admin@mondorobot.com
@@ -47,7 +46,7 @@ Password: R0bot4Lif3
 ```
 ## Features
 
-This application functionality extends to both end users and  the polling for your office's next robot
+This application functionality extends to both end-users and the polling for your office's next robot.
 
 
 <div align='left'>
@@ -56,7 +55,7 @@ This application functionality extends to both end users and  the polling for yo
 
 ---
 
-- Users have the ability to register, log in and log out.
+- Users can register, log in, and log out.
 - Users may vote for a robot, but only once.
 - Users may change their vote.
 - Users may see results from the voting page.
@@ -65,9 +64,9 @@ This application functionality extends to both end users and  the polling for yo
 
 ---
 
-- An additional link on the navbar can be seen as an Admin
+- Admins have a private page to edit the robots.
 - Admins can add or remove robots from the poll
-- Admins have the same access and functionality as an end-user.
+- Admins have the same access and functionality as end-user.
 
 </div>
 
@@ -84,7 +83,7 @@ This application functionality extends to both end users and  the polling for yo
 <div align="left">  
 
 
-  Hi! I am **Andrew Vallejo** and I did this project in order to show off my qualifications and skills to the kind people at Mondo Robots. At this time, I've been in school at Turing for 5 months. A month ago I would not be able to complete this project within the alotted week. It wasn't only knowledge I was given but rather the ability to find solutions on my own. 
+  Hi! I am **Andrew Vallejo** and I did this project to show off my qualifications and skills to the kind people at Mondo Robots. At this time, I've been in school at Turing for five months. A month ago, I would not be able to complete this project within the allotted week. It wasn't only the foundation of knowledge but rather the ability to find solutions on my own. 
 
  <details>
 
@@ -101,15 +100,15 @@ This application functionality extends to both end users and  the polling for yo
 
   This project presented challenges with each iteration. I had never used an API that had a key. I never heard of bearer tokens. I've never dealt with a real-like registration and authorization before. Nor worked with so many moving parts considering most elements in the App rely on communicating with the API. I also did not have project check-ins or the support of others as I would in school.
 
-  The hardest element was understanding how to get the API to work and what to do with the bearer tokens. I'll admit much of that didn't make sense as I thought the bearer token were unique to the user, therefore the API recognize if they were admin or not. It wasn't until I implemented an auto-login featurethat I finally understood how the whole system works. 
+  The most complex element was understanding the API's login features and understanding what to do with bearer tokens. I'll admit much of that didn't make sense as I thought the bearer token was unique to the user; therefore, the API recognize if they were admin or not. It wasn't until I implemented an auto-login feature that I finally understood how the whole system works. 
 
-  The most frustrating part of the project was actually getting the vote buttons to work correctly. The goal was when you vote for one robot, it's button would become disbaled. If you voted for another robot, it would become disabled and reenable the last one. Finding the solution was like having a house with a hundred lights, where some switches were connected to more than one lightbulb socket, and your job was to turn them all off but one. This was due because I decided earlier on when I made the button components that they would rely on boolean values from state to determine their functionality. 
+  The most frustrating part of the project was getting the vote buttons to work correctly. The goal was when you vote for one robot; its vote button would become disabled. If you voted for another robot, it would become disabled and reenable the last one. Finding the solution was like having a house with a hundred lights, where some switches were attached to more than one lightbulb socket, and your job was to turn them all off but one. This travesty was due because I decided earlier on when I made the button components that they would rely on boolean values from state to determine their functionality. 
 
   </sub>
 
-  *If you to hear more about challenges then read my
+  *If you want to hear more about challenges, then read my
 [pull requests](https://github.com/andrewvallejo/next-top-robot/pulls?q=is%3Apr+is%3Aclosed+sort%3Acreated-asc) 
-in chronlogical order to find further details on the evolution of this project.*
+in chronological order to find further details on the evolution of this project.*
 </details>
 
 ---
