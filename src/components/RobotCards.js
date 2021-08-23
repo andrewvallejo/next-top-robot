@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
+import FormData from "form-data";
 import { deleteRobot, retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls';
 import { AuthContext } from '../utility/AuthContext';
 import { Card } from './Card'
+import { useLocation } from 'react-router-dom';
 
 export const RobotCards = () => {
   const { state: { token } } = useContext(AuthContext)
@@ -10,6 +12,7 @@ export const RobotCards = () => {
   const [robotId, setRobotId] = useState('')
   const [results, setResults] = useState([])
   const [voteId, setVoteId] = useState('')
+  const path = useLocation().pathname
 
   useEffect(() => {
     (async () => {
@@ -18,7 +21,7 @@ export const RobotCards = () => {
       await tallyResults(token)
       .then((data) => setResults(data))
     })()
-  }, [token, robots])
+  }, [token, results])
 
   const handleVote = async (id) => {
     if (robotId !== id && !robotId) {
@@ -43,7 +46,10 @@ export const RobotCards = () => {
   return robots.map((robot) => {
     const robotVotes = results.map(result => result.robot)
     return (
-      <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} deleteRobot={handleDelete} />
+      <>
+        {(path === '/admin') && <Card />}
+        <Card key={robot.id} id={robot.id} robotInfo={robot} vote={handleVote} hasVoted={uploaded} totalVotes={robotVotes} deleteRobot={handleDelete} />
+      </>
     )
   })
 }
