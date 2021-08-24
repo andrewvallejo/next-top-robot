@@ -29,10 +29,9 @@
       margin: auto;
       .burger-menu {
         @include mediaQueries(burger-visability);
-        transition: 500ms;
-        position: absolute;
+        position: absolute;        
         top: 50%;
-        right: 50%;
+        transition: 500ms;
       }
       .nav-container {
         > a {
