@@ -57,7 +57,7 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
       <>
         {!!url ? 
         <article className='card'>
-          <h3>{name}</h3>
+          <h3 className='robot-name'>{name}</h3>
           <img className='robot-image' alt={`The robot named ${name}`} src={url} />
           {insert}
         </article> :
