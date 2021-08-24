@@ -1,3 +1,7 @@
+/* ==========================================================================
+  Component - LoginPortal
+========================================================================== */
+
 .login-board {
   @include flex(column, center);
   @include mediaQueries(padding);
