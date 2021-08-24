@@ -6,12 +6,25 @@
   .form-inputs {
     width: 100%;
     .robot-label {
+      margin: 3rem 0;
       margin-top: 5rem;
       width: 100%;
       .input-label {
         width: 100%;
       }  
     }    
+  }
+  .file-container {
+    @include flex(column, center);
+    margin-top: 1.5rem 0;
+    border: 2px dashed $color-gray-2;
+    border-radius: $border-radius;
+    width: 100%;
+    min-height: 13rem;
+    background: $color-gray-0;
+    .file-input {
+      visibility: hidden;;
+    }
   }
   .buttons-container {
     @include flex(row, space-between);
