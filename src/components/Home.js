@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { AuthContext } from '../utility/AuthContext'
 import { AdminCard } from './AdminCard'
 import { BoardHeader } from './BoardHeader'
+import { Card } from './Card'
 import { NavBar } from './NavBar'
 import { RobotCards } from './RobotCards'
 
@@ -16,7 +17,7 @@ export const Home = () => {
       <main>       
         <BoardHeader />
         <section className='robot-board'>
-        {isAdmin  && location === '/admin' && <AdminCard />}
+        {isAdmin  && location === '/admin' && <Card  robotInfo='' totalVotes={[]}/>}
         <RobotCards />
         </section>
       </main>
