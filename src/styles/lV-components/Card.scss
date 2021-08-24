@@ -2,6 +2,9 @@
   @include flex(column, space-around);
   @include mediaQueries(card-size);
   padding: 2.5rem 1.25rem 1.25rem;
+  > .robot-name {
+    text-transform: capitalize;
+  }
   > .robot-image {
     height: 20rem;
     width: 22rem;
