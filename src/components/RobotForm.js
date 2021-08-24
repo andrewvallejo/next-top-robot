@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { AuthContext } from '../utility/AuthContext';
-
 import FormData from 'form-data';
+import { AuthContext } from '../utility/AuthContext';
 import { addRobot } from '../utility/apiCalls';
 import { Button } from './Button'
-
+import icon from '../assets/upload.png'
 
 export const RobotForm = () =>{ 
   const initialState = {
@@ -35,6 +34,16 @@ export const RobotForm = () =>{
   }
 
 
+  const clearForm = () => {
+    console.log(robot)
+    setRobot({...robot, 
+      name: '',
+      image: '',
+      inserted: false
+    })
+    
+  }
+
   return (
     <form className='robot-form ' onSubmit={handleUpload}>
         <h3 className='form-title'>Add Robot</h3>
@@ -52,7 +61,9 @@ export const RobotForm = () =>{
         </label>
       </div>
       <div className='file-container'>
-        <label for='file' className='file-label'>Select image to upload</label>
+        <label htmlFor='file' className='file-label'>
+        <img className='upload-icon' src={icon} alt='An upload icon' />
+        Select image to upload</label>
         <input id='file' type='file' name='file' className='file-input' onChange={(e) => handleFile(e)} />
 
       </div>
@@ -61,12 +72,12 @@ export const RobotForm = () =>{
       code='create-valid'
       palette='tertiary'
       value='Clear'
+      clear={clearForm}
        />
       <Button 
       code={robot.inserted ? 'create-valid' : 'create-invalid'}
       type='submit'
       palette='primary'
-      // disable='disable'
       value='Add Robot' />
       </div>
     </form>
