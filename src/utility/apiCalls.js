@@ -47,7 +47,6 @@ export const registerUser = async ({ name, email, password }) => {
 }
 
 export const expireSession = async(token) => {
-  console.log(token)
   const config = {
     method: 'delete',
     url: generateApiUrl('session'),
@@ -66,20 +65,17 @@ export const retrieveRobots = async(token) => {
 }
 
 export const addRobot = async(data, token) => {
-  const config = {
+  var config = {
     method: 'post',
     url: generateApiUrl('robots'),
-    headers: { 
-      'Authorization': `Bearer ${token}`, 
-      ...data.getHeaders()
-    },
+    headers: {
+    'Authorization': `Bearer ${token}`, "Content-Type": "multipart/form-data",
+    "Access-Control-Allow-Origin": "*"
+  },
     data : data
   }
-  return await sendRequest(config)
-
-}
+  return await sendRequest(config)}
    
-
 export const deleteRobot = async(id, token) => {
   const config = {
     method: 'delete',
@@ -123,4 +119,3 @@ const sendRequest = async(config) => {
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
 
-// console.log(response) return 
