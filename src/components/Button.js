@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 
-export const Button = ({ code, value, palette, activate, isVoted , isActive}) => {  
+export const Button = ({ code, value, palette, activate, isVoted , isActive, clear}) => {  
   const [isTriggered, setIsTriggered] = useState(false)
 
   switch (code) {
@@ -42,7 +42,8 @@ export const Button = ({ code, value, palette, activate, isVoted , isActive}) =>
         )
       case 'create-valid': 
       return (
-        <button className={`button ${palette} create`}>
+        <button className={`button ${palette} create`}
+              onClick={() => clear()}>
           {value}
         </button>
         )
