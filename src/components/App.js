@@ -6,8 +6,8 @@ import { LoginPortal } from './LoginPortal';
 import { reducer } from '../utility/reducer';
 
 const initalState = {
-  isAuthenticated: false,
   isAdmin: false, 
+  isAuthenticated: false,
   token: '',
   error: '',
 }
