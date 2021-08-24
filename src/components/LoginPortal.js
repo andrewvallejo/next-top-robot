@@ -17,7 +17,6 @@ export const LoginPortal = () => {
     error: ''
   }
   
-  
   const { dispatch } = useContext(AuthContext)
   const [credentials, setCredentials] = useState({ initialState })
   const isRegistration = (useLocation().pathname === '/registration')
