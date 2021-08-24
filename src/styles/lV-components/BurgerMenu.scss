@@ -42,3 +42,32 @@
       }
     }
   }
+  
+  .mobile-menu {
+    @include flex(column, space-around);
+    position: absolute;
+    right: -60%;
+    top: -310%;
+    overflow: hidden;
+    background: $color-gray-3;
+    width: 100vw;
+    height: 100vh;
+    .links-container {
+      @include flex(column, space-around);
+      position: absolute;
+      top: 10%;
+      height: 50%;
+      width: 100%;
+      .mobile-link {
+        @include fonts(subheading);
+        color: $color-gray-1;
+        &.active {
+          color: $color-white
+        }
+        &.inactive {
+          color: $color-gray-1;
+        }
+      }
+    }
+  }
+  
