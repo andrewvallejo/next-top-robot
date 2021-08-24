@@ -1,9 +1,12 @@
 .burger-menu {
-  position: relative;
+  position: absolute;
+  top: 4%;
+  right: 5%;
   transition: 250ms ease-out;
   width: 2rem;
   height: .625rem;
-    .line {
+  z-index: 1;
+  .line {
     transition: 500ms;
     width: 2rem;
     height: 0.125rem;
@@ -22,11 +25,13 @@
     }
     .focus {
       transition: 500ms;
+      z-index: 1;
+      background: $color-white;
       &.one {
         position: absolute;
         top: 0;
         transform:rotate(45deg);
-        }
+      }
       &.two {
         opacity: 0;
         transform:rotate(360deg);
