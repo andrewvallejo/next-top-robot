@@ -22,8 +22,9 @@
     width: 100%;
     min-height: 13rem;
     background: $color-gray-0;
+    cursor: pointer;
     .file-input {
-      visibility: hidden;;
+      display: none;
     }
   }
   .buttons-container {
