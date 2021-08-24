@@ -33,6 +33,14 @@ export const Button = ({ code, value, palette, activate, isVoted , isActive}) =>
         {value}
       </button>
       )
+      case 'create': 
+      return (
+        <button 
+        className={`button ${palette} disable create`}
+        onClick={() => activate()}>
+          {value}
+        </button>
+        )
     default:
       return (
       <button className={`button ${palette}`}>
