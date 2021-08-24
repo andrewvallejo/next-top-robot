@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AuthContext } from '../utility/AuthContext'
-import { AdminCard } from './AdminCard'
 import { BoardHeader } from './BoardHeader'
 import { Card } from './Card'
 import { NavBar } from './NavBar'
