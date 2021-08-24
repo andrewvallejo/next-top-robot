@@ -40,7 +40,6 @@ export const RobotCards = () => {
     retrieveRobots(token)
   }
 
-
   return robots.map((robot) => {
     const robotVotes = results.map(result => result.robot)
     return (
