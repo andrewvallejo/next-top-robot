@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../utility/AuthContext';
-import { BurgerMenu } from './BurgerMenu';
+
 import { expireSession } from '../utility/apiCalls';
 import logo from  '../assets/mr-logo.png';
 
