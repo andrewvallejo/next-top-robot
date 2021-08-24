@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import FormData from 'form-data';
 import { addRobot } from '../utility/apiCalls';
+import { Button } from './Button'
 
 
-export const RobotForm = () => {
+export const RobotForm = () =>{ 
   const initialState = {
     name: '',
     image: '',
@@ -17,7 +18,6 @@ export const RobotForm = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     await addRobot(robot)
-      
   }
 
   const [robot, setRobot] = useState({ initialState })
@@ -25,6 +25,7 @@ export const RobotForm = () => {
   return (
     <form className='robot-form ' onSubmit={handleSubmit}>
       <div className='form-inputs'>
+        <h3>Add Robot</h3>
         <label htmlFor='robot-name' className='robot-label'>
           <fieldset className='input-label'>
             <legend className='input-name'>Name</legend>
@@ -36,6 +37,19 @@ export const RobotForm = () => {
             onChange={(e) => handleInput(e)} />
           </fieldset>
         </label>
+      </div>
+
+      <div className='buttons-container'>
+      <Button 
+      code='create'
+      palette='tertiary'
+      value='Clear'
+       />
+      <Button 
+      disable='disable'
+      palette='primary'
+      code='create'
+      value='Add Robot' />
       </div>
     </form>
   )
