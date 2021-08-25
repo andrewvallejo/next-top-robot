@@ -28,24 +28,24 @@
     }
     @if $property == burger-visability {
       right: 10%;
-      transition: 500ms;
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
+      transition: 500ms;
     }
     @if $property == nav-visability{
-      transition: 200ms;
       opacity: 0;
       transform: scale(.5);
+      transition: 200ms;
   }
     @if $property == card-size {
-      height: 32rem;
       width: 22rem;
+      height: 32rem;
     }
     @if $property == portal {
-      width: 100vw;
-      height: 100vh;
       overflow: hidden;
       border-radius: 0;
+      width: 100vw;
+      height: 100vh;
     }
     @if $property == input-width {
       width: 20rem;
@@ -63,14 +63,14 @@
   @media only screen and (max-width: 600px) {
     @if $property == burger-visability {
       right: 10%;
-      transition: 500ms;
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
+      transition: 500ms;
     }
     @if $property == nav-visability{
-      transition: 200ms;
       opacity: 0;
       transform: scale(.5);
+      transition: 200ms;
     }
   }
 }
@@ -93,9 +93,9 @@
       margin: 2.5rem;
     }
     @if $property == burger-visability {
-      transition: 200ms;
       opacity: 0;
       transform: scale(.5);
+      transition: 200ms;
     }
     @if $property == nav-visability{
       transition: 200ms;
@@ -103,13 +103,13 @@
       opacity: 1;
     }
     @if $property == card-size {
-      height: 32rem;
       width: 22rem;
+      height: 32rem;
     }
     @if $property == portal {
+      border-radius: $border-radius;
       width: auto;
       height: 95vh; 
-      border-radius: $border-radius;
     }
     @if $property == input-width {
       width: 31rem;
@@ -141,22 +141,22 @@
       margin-right: 30rem;
     }
     @if $property == burger-visability {
-      transition: 200ms;
       transform: scale(.5);
       opacity: 0;
+      transition: 200ms;
     }
     @if $property == nav-visability {
-      transition: 200ms;
       opacity: 1;
+      transition: 200ms;
     }
     @if $property == card-size {
       height: 32rem;
       width: 24rem;
     }
     @if $property == portal {
+      border-radius: $border-radius;
       width: auto;
       height: 95vh;
-      border-radius: $border-radius;
     }
     @if $property == input-width {
       width: 31rem;
