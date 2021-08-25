@@ -4,4 +4,4 @@ export const BoardHeader = () => {
       <h1 className='title'>Robots</h1>
     </section>
   )
-}
+};

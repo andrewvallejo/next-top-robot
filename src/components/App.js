@@ -10,7 +10,7 @@ const initalState = {
   isAuthenticated: false,
   token: '',
   error: '',
-}
+};
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initalState)
@@ -31,6 +31,6 @@ export const App = () => {
         </Route>
       </Switch>
     </AuthContext.Provider>
-  );
-}
+  )
+};
 

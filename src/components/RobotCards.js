@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react';
 import { deleteRobot, retrieveRobots, tallyResults, undoVote, voteForRobot } from '../utility/apiCalls';
 import { AuthContext } from '../utility/AuthContext';
-import { Card } from './Card'
+import { Card } from './Card';
 
 export const RobotCards = () => {
   const { state: { token } } = useContext(AuthContext)
@@ -10,7 +10,6 @@ export const RobotCards = () => {
   const [robotId, setRobotId] = useState('')
   const [results, setResults] = useState([])
   const [voteId, setVoteId] = useState('')
-
 
   useEffect(() => {
     (async () => {
@@ -48,4 +47,4 @@ export const RobotCards = () => {
       </div>
     )
   })
-}
+};

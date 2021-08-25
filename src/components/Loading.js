@@ -1,6 +1,5 @@
-import React from 'react'
-import logo from '../assets/mr-logo.png'
-
+import React from 'react';
+import logo from '../assets/mr-logo.png';
 
 export const Loading = () => {
   return (
@@ -9,9 +8,8 @@ export const Loading = () => {
       <article className='box-covers' />
         <div className='box one'/>
         <div className='box two'/>
-      <div/>
       <img alt='A logo of Mondo Robot' src={logo} className='logo'/>
       <article className='backdrop'/>
     </section>
   )
-}
+};
