@@ -87,6 +87,10 @@ This application functionality extends to both end-users and the polling for you
 
 </div>
 
+### Browser and device compatability
+
+I developed this application while exclusively using Google Chrome. The big three media breaks that were accounted for: mobile @ 375px, tablet at 768px, and desktop at 1440px. This was tested using Chrome's DevTools and my iPhone 11. 
+
 ## <div align="center"> My Story  </div>
 
 <div align="left">  
