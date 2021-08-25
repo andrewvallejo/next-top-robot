@@ -3,6 +3,7 @@
 ========================================================================== */
 
 .burger-menu {
+  @include mediaQueries(burger-visability);
   position: absolute;
   top: 4%;
   right: 5%;
@@ -50,8 +51,8 @@
 .mobile-menu {
   @include flex(column, space-around);
   position: absolute;
-  right: -60%;
-  top: -310%;
+  right: -155%;
+  top: -350%;
   overflow: hidden;
   background: $color-gray-3;
   width: 100vw;
