@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AuthContext } from '../utility/AuthContext;'
+import { AuthContext } from '../utility/AuthContext';
 import { BoardHeader } from './BoardHeader';
 import { BurgerMenu } from './BurgerMenu';
 import { Card } from './Card';
