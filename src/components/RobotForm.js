@@ -1,48 +1,40 @@
 import React, { useState, useContext } from 'react'
 import FormData from 'form-data';
-import { AuthContext } from '../utility/AuthContext';
 import { addRobot } from '../utility/apiCalls';
-import { Button } from './Button'
-import icon from '../assets/upload.png'
+import { AuthContext } from '../utility/AuthContext';
+import { Button } from './Button';
+import icon from '../assets/upload.png';
+
+
 
 export const RobotForm = () =>{ 
-  const initialState = {
-    name: '',
-    image: '',
-    inserted: 'false'
-  }
-
-  const [robot, setRobot] = useState({ initialState })
+  const [name, setName] = useState('')
+  const [image, setImage] = useState('')
   const { state: { token } } = useContext(AuthContext)
 
   const handleFile = (event) => {
     event.preventDefault()
-    setRobot({...robot, [event.target.name]: event.target.value})
+    if (event.target.name === 'name') {
+      setName(event.target.value)
+    } else {
+      setImage(event.target.files[0])
+    }
   }
-
+  
   const handleUpload = async(event) => {
     event.preventDefault()
-    if(robot.name && robot.image) {
-      setRobot({...robot, inserted: true})
-      const formData = new FormData()
-      formData.append('name', robot.name)
-      formData.append('image', robot.image)
-      await addRobot(formData, token)}
-    else {
-      setRobot({...robot, inserted: false})
+    if (name && image) {
+      var formData = new FormData();
+      formData.append('name', name);
+      formData.append('image', image)
+      addRobot(formData, token)
     }
   }
 
-
   const clearForm = () => {
-    console.log(robot)
-    setRobot({...robot, 
-      name: '',
-      image: '',
-      inserted: false
-    })
-    
-  }
+    setName('')
+    setImage('')
+  }    
 
   return (
     <form className='robot-form ' onSubmit={handleUpload}>
@@ -62,23 +54,23 @@ export const RobotForm = () =>{
       </div>
       <div className='file-container'>
         <label htmlFor='file' className='file-label'>
-        <img className='upload-icon' src={icon} alt='An upload icon' />
-        Select image to upload</label>
-        <input id='file' type='file' name='file' className='file-input' onChange={(e) => handleFile(e)} />
-
+          <img className='upload-icon' src={icon} alt='An upload icon' />
+          Select image to upload
+        </label>
+        <input id='file' type='file' name='image' className='file-input' onChange={(e) => handleFile(e)} />
       </div>
       <div className='buttons-container'>
-      <Button 
-      code='create-valid'
-      palette='tertiary'
-      value='Clear'
-      clear={clearForm}
-       />
-      <Button 
-      code={robot.inserted ? 'create-valid' : 'create-invalid'}
-      type='submit'
-      palette='primary'
-      value='Add Robot' />
+        <Button 
+        code='create-valid'
+        palette='tertiary'
+        value='Clear'
+        clear={clearForm}
+        />
+        <Button 
+        code={name && image ? 'create-valid' : 'create-invalid'}
+        type='submit'
+        palette='primary'
+        value='Add Robot' />
       </div>
     </form>
   )
