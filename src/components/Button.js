@@ -49,7 +49,7 @@ export const Button = ({ code, value, palette, activate, isVoted , isActive, cle
       case 'clear': 
       return (
         <button className={`button ${palette} create`}
-              onClick={() => clear()}>
+              onClick={clear}>
           {value}
         </button>
         )
