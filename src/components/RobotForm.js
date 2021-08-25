@@ -16,11 +16,13 @@ export const RobotForm = () =>{
       setName(event.target.value)
     } else {
       setImage(event.target.files[0])
+
     }
   }
   
   const handleUpload = async(event) => {
     event.preventDefault()
+
     if (name && image) {
       var formData = new FormData();
       formData.append('name', name);
@@ -33,7 +35,6 @@ export const RobotForm = () =>{
   const clearForm = () => {
     setName('')
     setImage('')
-    console.log('et')
   }    
 
   return (
@@ -55,10 +56,10 @@ export const RobotForm = () =>{
       </div>
       <div className='file-container'>
         <label htmlFor='file' className='file-label'>
-          <img className='upload-icon' src={icon} alt='An upload icon' />
-          Select image to upload
+          {!image && <img className='upload-icon' src={icon} alt='An upload icon' />}
+          {!image ? 'Select image to upload ' : `Image uploaded: ${image.name}`} 
         </label>
-        <input id='file' type='file' name='image'    value={image || ''} className='file-input' onChange={(e) => handleFile(e)} />
+        <input id='file' type='file' name='image' className='file-input' onChange={(e) => handleFile(e)} />
       </div>
       <div className='buttons-container'>
         <Button 
