@@ -1,3 +1,7 @@
+/* ==========================================================================
+  Tools - KeyFrames
+========================================================================== */
+
 @keyframes grow-left {
   from {box-shadow: none;}
   to {
@@ -13,7 +17,6 @@
     transform: translateX(10rem);
   }
 }
-
 
 @keyframes shrink-left {
   from {
@@ -38,8 +41,6 @@
     box-shadow: none; 
   }
 }
-
-
 
 @keyframes fade-in {
   from {opacity: 0;}
