@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../utility/AuthContext';
-
 import { expireSession } from '../utility/apiCalls';
 import logo from  '../assets/mr-logo.png';
 
 export const NavBar = () => {
-  const { dispatch, state: authState } = useContext(AuthContext);
+  const { dispatch, state: authState } = useContext(AuthContext)
   const { isAdmin, isAuthenticated, token } = authState
 
   const handleLogOut = async(event) => {
-    event.preventDefault();
+    event.preventDefault()
     await expireSession(token)
     .then(() => !isAuthenticated)
     .then(() => {dispatch({type: 'LOGOUT', info: {}}) 
@@ -37,4 +36,4 @@ export const NavBar = () => {
       </section>
     </header>
   )
-}
+};

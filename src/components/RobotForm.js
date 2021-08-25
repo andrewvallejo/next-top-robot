@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext } from 'react';
 import FormData from 'form-data';
 import { addRobot } from '../utility/apiCalls';
 import { AuthContext } from '../utility/AuthContext';
@@ -16,16 +16,14 @@ export const RobotForm = () =>{
       setName(event.target.value)
     } else {
       setImage(event.target.files[0])
-
     }
   }
   
   const handleUpload = async(event) => {
     event.preventDefault()
-
     if (name && image) {
-      var formData = new FormData();
-      formData.append('name', name);
+      var formData = new FormData()
+      formData.append('name', name)
       formData.append('image', image)
       addRobot(formData, token)
       clearForm()
@@ -76,4 +74,4 @@ export const RobotForm = () =>{
       </div>
     </form>
   )
-}
+};

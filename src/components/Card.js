@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { Button } from './Button'
-import { RobotForm } from './RobotForm'
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Button } from './Button';
+import { RobotForm } from './RobotForm';
 
 export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, deleteRobot }) => {
   const [active, setActive]= useState(false)
   const [count, setCount] = useState(0)
   const path = useLocation().pathname
-  let insert;
+  let insert
   
   useEffect(() => {
     const robotTotalVotes = totalVotes.filter((vote) => vote === id)
     setCount(() => robotTotalVotes.length)
   }, [totalVotes, id, count])
 
- 
   const handleButton = (id) => {
     setActive(!active)
     vote(id)
@@ -30,11 +29,12 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
       isVoted={hasVoted} />
     )
   } else if (path === '/results') {
-    insert = 
-    <>
-      <label htmlFor="results"><h2 >{count}<span className='out-of'>/{totalVotes.length}</span></h2></label>
-      <progress className='results-bar' htmlFor="results" value={count}  max={totalVotes.length} />
-    </>
+    insert = (
+      <>
+        <label htmlFor="results"><h2 >{count}<span className='out-of'>/{totalVotes.length}</span></h2></label>
+        <progress className='results-bar' htmlFor="results" value={count}  max={totalVotes.length} />
+      </>
+    )
   } else if (path === '/admin') {
     insert = (
       <div className='buttons-container'>
@@ -53,18 +53,17 @@ export const Card = ({ robotInfo: {id, url, name}, vote, hasVoted, totalVotes, d
     )
   }
 
-    return (
-      <>
-        {!!url ? 
-        <article className='card'>
-          <h3 className='robot-name'>{name}</h3>
-          <img className='robot-image' alt={`The robot named ${name}`} src={url} />
-          {insert}
-        </article> :
-        <article className='card'>
-          <RobotForm />
-        </article>}
-
-      </>
-    )
-}
+  return (
+    <>
+      {!!url ? 
+      <article className='card'>
+        <h3 className='robot-name'>{name}</h3>
+        <img className='robot-image' alt={`The robot named ${name}`} src={url} />
+        {insert}
+      </article> :
+      <article className='card'>
+        <RobotForm />
+      </article>}
+    </>
+  )
+};

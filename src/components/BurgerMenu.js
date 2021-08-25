@@ -23,11 +23,11 @@ export const BurgerMenu = ({ toggleMenu }) => {
 
   return (
     <div className='burger-menu' onClick={handleToggle}>
-          <div className={`line one ${focus ? 'focus' : ' '}`} />
-          <div className={`line two ${focus ? 'focus' : ' '}`} />
-          <div className={`line three ${focus ? 'focus' : ' '}`}/>  
-          {focus && <MobileMenu logout={handleLogOut}/>}  
-        </div>
+      <div className={`line one ${focus ? 'focus' : ' '}`} />
+      <div className={`line two ${focus ? 'focus' : ' '}`} />
+      <div className={`line three ${focus ? 'focus' : ' '}`}/>  
+      {focus && <MobileMenu logout={handleLogOut}/>}  
+    </div>
   )
-}
+};
 
