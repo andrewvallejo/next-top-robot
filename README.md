@@ -109,15 +109,13 @@ I developed this application while exclusively using Google Chrome. The big thre
   <br>
 
    
- <sub>
 
-  This project presented challenges with each iteration. I had never used an API that had a key. I never heard of bearer tokens. I've never dealt with a real-like registration and authorization before. Nor worked with so many moving parts considering most elements in the App rely on communicating with the API. I also did not have project check-ins or the support of others as I would in school.
+
+  This project presented challenges with each iteration. I had never used an API that had a key. I never heard of bearer tokens. I've never dealt with a real-like registration and authorization system before. Nor worked with so many moving parts considering most elements in the App rely on communicating with the API. Especially since some aspects of the API left me unsure wether or not I was doing something correctly. 
 
   The most complex element was understanding the API's login features and understanding what to do with bearer tokens. I'll admit much of that didn't make sense as I thought the bearer token was unique to the user; therefore, the API recognize if they were admin or not. It wasn't until I implemented an auto-login feature that I finally understood how the whole system works. 
 
   The most frustrating part of the project was getting the vote buttons to work correctly. The goal was when you vote for one robot; its vote button would become disabled. If you voted for another robot, it would become disabled and reenable the last one. Finding the solution was like having a house with a hundred lights, where some switches were attached to more than one lightbulb socket, and your job was to turn them all off but one. This travesty was due because I decided earlier on when I made the button components that they would rely on boolean values from state to determine their functionality. 
-
-  </sub>
 
   *If you want to hear more about challenges, then read my
 [pull requests](https://github.com/andrewvallejo/next-top-robot/pulls?q=is%3Apr+is%3Aclosed+sort%3Acreated-asc) 
