@@ -20,7 +20,6 @@
 ---
 
 
-
 ## Instructions
 
 </div>
@@ -44,6 +43,16 @@ Log in with the admin credentials.
 Email: admin@mondorobot.com
 Password: R0bot4Lif3
 ```
+
+## Preview
+
+![mobile view](https://user-images.githubusercontent.com/17935770/130727289-15cac82c-8935-4aa7-b965-af1426a22236.png)
+
+<img width="1436" alt="Screen Shot 2021-08-24 at 10 05 40 PM" src="https://user-images.githubusercontent.com/17935770/130727314-04385e17-30e7-4fce-939f-62f75de80b8e.png">
+
+<img width="1438" alt="Screen Shot 2021-08-24 at 10 05 55 PM" src="https://user-images.githubusercontent.com/17935770/130727328-9fa08252-c3ba-4fde-97b2-ee5474b6e23b.png">
+
+
 ## Features
 
 This application functionality extends to both end-users and the polling for your office's next robot.
@@ -51,7 +60,7 @@ This application functionality extends to both end-users and the polling for you
 
 <div align='left'>
 
-###  User
+###  User 
 
 ---
 
@@ -70,7 +79,7 @@ This application functionality extends to both end-users and the polling for you
 
 </div>
 
-## <h2 align="center"> Technologies </h2>
+## <div align="center"> Technologies </div>
 
 <div align="center">  
 
@@ -78,7 +87,7 @@ This application functionality extends to both end-users and the polling for you
 
 </div>
 
-## <h2 align="center"> My Story  </h2>
+## <div align="center"> My Story  </div>
 
 <div align="left">  
 
