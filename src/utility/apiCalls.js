@@ -65,16 +65,14 @@ export const retrieveRobots = async(token) => {
 }
 
 export const addRobot = async(data, token) => {
-  var config = {
+  const config = {
     method: 'post',
     url: generateApiUrl('robots'),
-    headers: {
-    'Authorization': `Bearer ${token}`, "Content-Type": "multipart/form-data",
-    "Access-Control-Allow-Origin": "*"
-  },
+    headers: {'Authorization': `Bearer ${token}`},
     data : data
   }
-  return await sendRequest(config)}
+  return await sendRequest(config)
+}
    
 export const deleteRobot = async(id, token) => {
   const config = {
