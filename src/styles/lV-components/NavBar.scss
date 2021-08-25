@@ -27,14 +27,13 @@
     &.right-container {
       @include flex(column, center);
       margin: auto;
-      .nav-container {
-        > a {
+      .nav-container > a {
           @include mediaQueries(nav-visability);
           @include fonts(bold-link, $font-weight-regular);;
           margin: 0 1.5rem;
           white-space: nowrap;
           color: $color-gray-2;
-      }}
+      }
     }
   } 
 }

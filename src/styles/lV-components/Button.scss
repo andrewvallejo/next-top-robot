@@ -26,10 +26,10 @@
       color: $color-white;
     }
     &.disable {
-      background: $color-gray-1;
-      color: $color-gray-3;
       opacity: 0.4;
       min-width: 3rem;
+      background: $color-gray-1;
+      color: $color-gray-3;
     }
   } 
   &.secondary {
@@ -58,8 +58,8 @@
     text-decoration: underline;
     text-underline-offset: 1px;
     &:hover {
-      transition: 200ms;
       transform: scale(1.3) translateY(-5px);
+      transition: 200ms;
     }
     &:active {
       background: $color-gray-3;
