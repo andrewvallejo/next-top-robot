@@ -10,7 +10,8 @@
   width: 100vw;
   .website-title {
     @include mediaQueries(web-title-position);
-    position: fixed;
+    position: absolute;
+    top: 10%;
     opacity: 0;
     animation: fade-in 1s linear 3.1s normal forwards;
     font-size: 2.2rem;
@@ -26,7 +27,7 @@
     animation: fade-in 5s linear 3s normal forwards;
     box-shadow: $box-shadow-1;
     width:18rem;
-    height: 12rem;
+    height: 15rem;
     background: $color-transparent;
   }
   .box {
