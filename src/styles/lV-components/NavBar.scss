@@ -27,12 +27,6 @@
     &.right-container {
       @include flex(column, center);
       margin: auto;
-      .burger-menu {
-        @include mediaQueries(burger-visability);
-        position: absolute;        
-        top: 50%;
-        transition: 500ms;
-      }
       .nav-container {
         > a {
           @include mediaQueries(nav-visability);
