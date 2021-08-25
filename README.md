@@ -4,7 +4,7 @@
 
 ![image](https://user-images.githubusercontent.com/17935770/129827835-7649f2e6-cd28-4206-b3f7-4788e09ba53f.png)
 
-  By the end of 2021, there will be **3,788,000** robots. This number is nearly a million more units compared to the number of robots counted in 2019. If you were to purchase a new robot every day, it would take you over **10,000** years to acquire each robot, and by then, the world would probably be own by them. Knowing the statistics, this was not feasible for robot-loving fanatics at Mondo Robot.
+  By the end of 2021, there will be **3,788,000** robots. This number is nearly a million more units compared to the number of robots counted in 2019. If you were to purchase a new robot every day, it would take you over **10,000** years to acquire each robot, and by then, the world would probably be owned by them. Knowing the statistics, this was not feasible for robot-loving fanatics at Mondo Robot.
 
   <details>
   <summary>
