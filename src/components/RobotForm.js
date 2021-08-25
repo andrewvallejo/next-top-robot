@@ -5,8 +5,6 @@ import { AuthContext } from '../utility/AuthContext';
 import { Button } from './Button';
 import icon from '../assets/upload.png';
 
-
-
 export const RobotForm = () =>{ 
   const [name, setName] = useState('')
   const [image, setImage] = useState('')
@@ -28,12 +26,14 @@ export const RobotForm = () =>{
       formData.append('name', name);
       formData.append('image', image)
       addRobot(formData, token)
+      clearForm()
     }
   }
 
   const clearForm = () => {
     setName('')
     setImage('')
+    console.log('et')
   }    
 
   return (
@@ -47,6 +47,7 @@ export const RobotForm = () =>{
             className='inner-input' 
             type='text' 
             name='name' 
+            value={name || ''}
             id='name' 
             onChange={(e) => handleFile(e)} />
           </fieldset>
@@ -57,13 +58,13 @@ export const RobotForm = () =>{
           <img className='upload-icon' src={icon} alt='An upload icon' />
           Select image to upload
         </label>
-        <input id='file' type='file' name='image' className='file-input' onChange={(e) => handleFile(e)} />
+        <input id='file' type='file' name='image'    value={image || ''} className='file-input' onChange={(e) => handleFile(e)} />
       </div>
       <div className='buttons-container'>
         <Button 
-        code='create-valid'
+        code='clear'
         palette='tertiary'
-        value='Clear'
+        value='clear'
         clear={clearForm}
         />
         <Button 
