@@ -113,7 +113,7 @@ export const tallyResults = async(token) => {
 
 const sendRequest = async(config) => {
  return await axios(config)
-  .then((response) => {console.log(response); return response.data})
+  .then((response) => response.data)
   .catch((error) => console.log('Sorry, an error has occured:', error))
 }
 
