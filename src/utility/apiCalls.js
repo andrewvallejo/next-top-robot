@@ -17,7 +17,7 @@ const generateApiUrl = (request) => {
     default: 
       break;
   }
-}
+};
 
 export const authenticateUser = async({ email, password }) => {
   const config = {
@@ -30,7 +30,7 @@ export const authenticateUser = async({ email, password }) => {
     }
   }  
   return await sendRequest(config)
-}
+};
 
 export const registerUser = async ({ name, email, password }) => { 
   const config = {
@@ -44,7 +44,7 @@ export const registerUser = async ({ name, email, password }) => {
     }
   }
   return await sendRequest(config)
-}
+};
 
 export const expireSession = async(token) => {
   const config = {
@@ -53,7 +53,7 @@ export const expireSession = async(token) => {
     headers: {'Authorization': `Bearer ${token}`}
   }
   return await sendRequest(config)
-}
+};
 
 export const retrieveRobots = async(token) => {
   const config = {
@@ -62,7 +62,7 @@ export const retrieveRobots = async(token) => {
     headers: {'Authorization': `Bearer ${token}`}
   }
   return await sendRequest(config)
-}
+};
 
 export const addRobot = async(data, token) => {
   const config = {
@@ -72,7 +72,7 @@ export const addRobot = async(data, token) => {
     data : data
   }
   return await sendRequest(config)
-}
+};
    
 export const deleteRobot = async(id, token) => {
   const config = {
@@ -81,7 +81,7 @@ export const deleteRobot = async(id, token) => {
     headers: {'Authorization': `Bearer ${token}`}
   }
   return await sendRequest(config)
-}
+};
 
 export const voteForRobot = async(id, token) => {
   const config = {
@@ -91,7 +91,7 @@ export const voteForRobot = async(id, token) => {
     data : {'robot': id}
   }
   return await sendRequest(config)
-}
+};
 
 export const undoVote = async(id, token) => {
   const config = {
@@ -100,7 +100,7 @@ export const undoVote = async(id, token) => {
     headers: {'Authorization': `Bearer ${token}`},
   }
   return await sendRequest(config)
-}
+};
 
 export const tallyResults = async(token) => {
   const config = {
@@ -109,11 +109,11 @@ export const tallyResults = async(token) => {
     headers: {'Authorization': `Bearer ${token}`},
   }
   return await sendRequest(config)
-}
+};
 
 const sendRequest = async(config) => {
  return await axios(config)
   .then((response) => response.data)
   .catch((error) => console.log('Sorry, an error has occured:', error))
-}
+};
 
