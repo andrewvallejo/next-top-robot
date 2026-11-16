@@ -24,13 +24,13 @@
 
 </div>
 
-Clone the project, install dependencies, and run.
+Use Node 22. Clone the project, install dependencies, and run. The Vite production build is written to `build/`. Netlify uses `public/_redirects` for client-side routes.
 
 ```jsx
 git clone git@github.com:andrewvallejo/next-top-robot.git
 cd next-top-robot
-npm install 
-npm start
+yarn install --frozen-lockfile
+yarn start
 ```
 
 Register an account and log in. Vote on your favorite robot and see how it fairs against its competition on the results page! Change your mind? Go back to the voting page and take back your vote to vote again!
