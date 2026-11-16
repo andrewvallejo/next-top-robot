@@ -37,7 +37,13 @@
     "url-parse": "1.5.9",
     "websocket-driver": "0.7.5",
     "yaml": "1.10.3",
-    "qs": "6.16.0"
+    "qs": "6.16.0",
+    "@babel/core": "7.29.6",
+    "@babel/plugin-transform-modules-systemjs": "7.29.4",
+    "**/html-webpack-plugin/loader-utils": "1.4.2",
+    "**/react-dev-utils/loader-utils": "2.0.4",
+    "**/express/path-to-regexp": "0.1.13",
+    "**/resolve-url-loader/loader-utils": "1.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
