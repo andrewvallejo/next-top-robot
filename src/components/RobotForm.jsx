@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import FormData from 'form-data';
 import { addRobot } from '../utility/apiCalls';
 import { AuthContext } from '../utility/AuthContext';
 import { Button } from './Button';
