@@ -43,7 +43,8 @@
     "**/html-webpack-plugin/loader-utils": "1.4.2",
     "**/react-dev-utils/loader-utils": "2.0.4",
     "**/express/path-to-regexp": "0.1.13",
-    "**/resolve-url-loader/loader-utils": "1.4.2"
+    "**/resolve-url-loader/loader-utils": "1.4.2",
+    "lodash.template": "4.18.1"
   },
   "scripts": {
     "start": "react-scripts start",
